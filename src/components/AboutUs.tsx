@@ -10,7 +10,7 @@ export function AboutUs() {
             The Heart Behind Suorya
           </p>
           <h2 className="text-4xl md:text-5xl text-stone-800">
-            A Father - Daughter Journey
+            A Father - Daughter Journey!
           </h2>
         </div>
 
