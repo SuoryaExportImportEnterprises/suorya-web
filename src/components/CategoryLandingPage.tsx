@@ -38,7 +38,7 @@ export function CategoryLandingPage({
       </div>
 
       {/* Cover Section - Reduced height */}
-      <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
+      {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
         <ImageWithFallback
           src={coverImageUrl}
           alt={categoryName}
@@ -55,16 +55,16 @@ export function CategoryLandingPage({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Subcategory Blocks */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl text-stone-800 mb-4">
             Select a Category
           </h2>
           <div className="w-24 h-1 bg-orange-600 mx-auto"></div>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {subcategories.map((subcategory, index) => (

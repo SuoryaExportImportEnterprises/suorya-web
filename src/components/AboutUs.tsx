@@ -14,7 +14,7 @@ export function AboutUs() {
           </h2>
           <p className="text-stone-600 text-lg mt-2">
     At the heart of the business is a passionate father–daughter duo, blending expertise in operations and design.
-  </p>
+          </p>
         </div>
 
         {/* Content Grid */}
