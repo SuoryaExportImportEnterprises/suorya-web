@@ -146,15 +146,17 @@ export function ContactPage({ onBack }: ContactPageProps) {
             </div>
 
           <div className="mb-16">
-          <h2 className="text-2xl text-stone-800 mb-6 text-center">
+          <h2 className="text-2xl text-stone-800 mb-6">
             Find Our Showroom
           </h2>
           <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg border border-stone-200">
-            
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3390108307194!2d77.38283687475115!3d28.619599984669087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff39a35ee69%3A0x954d9b1c21dcc7b4!2sSuorya%20Exports%20Imports%20Enterprises!5e0!3m2!1sen!2sin!4v1759751159815!5m2!1sen!2sin" width="100%" height="600"  loading="lazy" ></iframe>
-
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3390108307194!2d77.38283687475115!3d28.619599984669087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff39a35ee69%3A0x954d9b1c21dcc7b4!2sSuorya%20Exports%20Imports%20Enterprises!5e0!3m2!1sen!2sin!4v1759751159815!5m2!1sen!2sin" 
+            width="100%" 
+            height="600"  
+            loading="lazy" 
+            ></iframe>
           </div>
-          
         </div>
 
           </div>
@@ -268,7 +270,6 @@ export function ContactPage({ onBack }: ContactPageProps) {
       placeholder="Share your requirements or custom design ideas..."
     ></textarea>
   </div>
-
   {/* Submit */}
              <div>
              <button
@@ -279,8 +280,6 @@ export function ContactPage({ onBack }: ContactPageProps) {
              </button>
            </div>
          </form>
-
-
               <div className="border-t border-stone-200">
               <h3 className="text-lg text-stone-800 mb-3">
                 For Trade & Wholesale Inquiries
