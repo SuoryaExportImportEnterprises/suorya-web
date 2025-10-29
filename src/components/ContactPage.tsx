@@ -29,7 +29,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
 
     // Email addresses to send the form to
     const emailAddresses = [
-      "email1@example.com", // Replace with actual email
+      "alodhankhushi17@gmail.com", // Replace with actual email
       "email2@example.com", // Replace with actual email
       "email3@example.com", // Replace with actual email
     ];
@@ -85,7 +85,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl text-stone-800 mb-6">
-                Visit Our Design Studio
+                Visit Our Showroom
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -95,7 +95,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   <div>
                     <h3 className="text-lg text-stone-800 mb-1">Location</h3>
                     <p className="text-stone-600">
-                      Visit our studio to explore our complete collection
+                      Visit our showroom to explore our complete collection
                       <br />
                       <span className="text-sm">By appointment only</span>
                     </p>
@@ -112,10 +112,10 @@ export function ContactPage({ onBack }: ContactPageProps) {
                       href="mailto:hello@suorya.com"
                       className="text-orange-600 hover:text-orange-700 transition-colors duration-300"
                     >
-                      hello@suorya.com
+                      info@suorya.co.in
                     </a>
                     <p className="text-sm text-stone-600 mt-1">
-                      We respond within 24 hours
+                      We respond within 48 hours
                     </p>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
                       +1 (234) 567-8900
                     </a>
                     <p className="text-sm text-stone-600 mt-1">
-                      Mon-Fri, 9am-6pm EST
+                      Mon-Sat, 9:30am - 6pm IST
                     </p>
                   </div>
                 </div>
@@ -257,7 +257,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
         
         <div className="mb-16">
           <h2 className="text-2xl text-stone-800 mb-6 text-center">
-            Find Our Studio
+            Find Our Showroom
           </h2>
           <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg border border-stone-200">
             
