@@ -1,4 +1,7 @@
-export function Hero() {
+interface HeroProps {
+  onNavigate: (page: string) => void;
+}
+export function Hero({ onNavigate }: HeroProps) {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Overlay */}
@@ -32,12 +35,19 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <a
+            {/* <a
               href="#about"
               className="inline-flex items-center justify-center px-8 py-4 bg-stone-800 text-[rgba(255,255,255,1)] rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Our Story
-            </a>
+            </a> */}
+            <button
+  onClick={() => onNavigate("about")}
+  className="inline-flex items-center justify-center px-8 py-4 ..."
+>
+  Our Story
+</button>
+
             
           </div>
         </div>

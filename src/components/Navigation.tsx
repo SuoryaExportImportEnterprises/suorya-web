@@ -69,6 +69,14 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
               </button>
             ))}
 
+            {/* Contact Us Button */}
+            <button
+              onClick={() => onNavigate("contact")}
+              className="text-stone-700 hover:text-orange-600 transition-colors duration-300"
+            >
+              Contact Us
+            </button>
+
             {/* Visible Search Input */}
             <form onSubmit={handleSearch} className="relative">
               <input
@@ -86,14 +94,6 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
                 <Search className="w-4 h-4" />
               </button>
             </form>
-
-            {/* Contact Us Button */}
-            <Button
-              onClick={() => onNavigate("contact")}
-              className="bg-orange-600 text-white hover:bg-orange-700 px-6 rounded-full"
-            >
-              Contact Us
-            </Button>
           </div>
 
           {/* Mobile menu button */}

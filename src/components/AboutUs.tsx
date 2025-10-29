@@ -12,14 +12,17 @@ export function AboutUs() {
           <h2 className="text-4xl md:text-5xl text-stone-800">
             A Father - Daughter Journey!
           </h2>
+          <p className="text-stone-600 text-lg mt-2">
+    At the heart of the business is a passionate father–daughter duo, blending expertise in operations and design.
+  </p>
         </div>
 
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
             <img
-              src="/cover-images/craftsmanship-detail.jpg"
+              src="/home/father-daughter.jpg"
               alt="Suorya Craftsmanship"
               className="w-full h-full object-cover aspect-[16/10]"
             />
@@ -29,17 +32,15 @@ export function AboutUs() {
           {/* Story Content */}
           <div className="space-y-8">
             <p className="text-lg text-stone-600 leading-relaxed">
-              Suorya Exports is a story of legacy, creativity, and commitment - a
-              father’s 30+ years of mastery in craftsmanship joined by his
-              daughter’s fresh design perspective and collaborative spirit.
-              Together, they’ve built more than a business; they’ve nurtured a
-              partnership rooted in trust, innovation, and shared vision. With
-              every ribbon, trim, and décor piece, their design and buying teams
-              work hand-in-hand to ensure timeless elegance that remains on
-              trend. Driven by an unwavering focus on quality, premium
-              craftsmanship, and timely delivery, Suorya Exports continues to
-              redefine what it means to create with purpose - celebrating a
-              legacy that’s both enduring and ever-evolving.
+              Suorya Exports is a story of legacy, creativity, and commitment - a father’s 30+ years of mastery in textiles
+              joined by his daughter’s fresh design perspective. Together, we’ve built more than a business; we’ve nurtured 
+              a partnership rooted in trust, innovation, and shared vision. With every order, our design and production team 
+              works hand in hand to ensure timely delivery with focus on quality.
+              
+              What drives us isn’t just the fabric or the finish - it’s the purpose stitched into every creation. Each 
+              piece we make carries a part of our story: the patience of years spent perfecting the craft, the curiosity to
+              explore new ideas, and the joy of seeing imagination take form. For us, quality is the reflection of who we are
+              - steady, evolving, and endlessly devoted to creating something that lasts.
             </p>
 
             <blockquote className="border-l-4 border-orange-600 pl-6 italic text-stone-700">
