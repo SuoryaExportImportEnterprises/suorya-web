@@ -262,7 +262,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
     <label htmlFor="message" className="block text-stone-700 mb-1 text-md">Message *</label>
     <textarea
       id="message"
-      rows={2}
+      rows={3}
       required
       value={formData.message}
       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
