@@ -9,6 +9,8 @@ interface ContactPageProps {
 
 interface FormData {
   name: string;
+  company: string;
+  designation: string;
   email: string;
   phone: string;
   inquiry: string;
@@ -18,6 +20,8 @@ interface FormData {
 export function ContactPage({ onBack }: ContactPageProps) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    company: "",
+    designation: "",
     email: "",
     phone: "",
     inquiry: "General Inquiry",
@@ -37,7 +41,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
     // Create mailto link with all recipients
     const subject = encodeURIComponent(`Suorya Contact Form - ${formData.inquiry}`);
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInquiry Type: ${formData.inquiry}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nCompany: ${formData.company}\nDesignation: ${formData.designation}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInquiry Type: ${formData.inquiry}\n\nMessage:\n${formData.message}`
     );
 
     // Open mailto for all recipients
@@ -46,6 +50,8 @@ export function ContactPage({ onBack }: ContactPageProps) {
     // Reset form
     setFormData({
       name: "",
+      company: "",
+      designation: "",
       email: "",
       phone: "",
       inquiry: "General Inquiry",
@@ -75,12 +81,11 @@ export function ContactPage({ onBack }: ContactPageProps) {
           </p>
           <h1 className="text-4xl md:text-5xl text-stone-800">Contact Us</h1>
           <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-            We'd love to hear from you. Reach out for inquiries, wholesale
-            orders, or any questions about our products.
+            Have a question or enquiry? Whether it's wholesale, a custom order, or product info, drop us a message and we'll get back to you soon.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-10 max-h-[66vh] lg:max-h-[72vh] overflow-auto">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
@@ -140,7 +145,143 @@ export function ContactPage({ onBack }: ContactPageProps) {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-stone-200">
+          <div className="mb-16">
+          <h2 className="text-2xl text-stone-800 mb-6 text-center">
+            Find Our Showroom
+          </h2>
+          <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3390108307194!2d77.38283687475115!3d28.619599984669087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff39a35ee69%3A0x954d9b1c21dcc7b4!2sSuorya%20Exports%20Imports%20Enterprises!5e0!3m2!1sen!2sin!4v1759751159815!5m2!1sen!2sin" width="100%" height="600"  loading="lazy" ></iframe>
+
+          </div>
+          
+        </div>
+
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-stone-50 rounded-2xl p-4 lg:p-8">
+
+            <h2 className="text-2xl text-stone-800 mb-6">Send Us a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-3 max-w-2xl mx-auto">
+            {/* Name */}
+               <div>
+                 <label htmlFor="name" className="block text-stone-700 mb-1 text-md">Name *</label>
+                 <input
+                   type="text"
+                   id="name"
+                   required
+                   value={formData.name}
+                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                   className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+                   placeholder="Your name"
+                />
+              </div>
+
+  {/* Company (required) */}
+  <div>
+    <label htmlFor="company" className="block text-stone-700 mb-1 text-md">Company *</label>
+    <input
+      type="text"
+      id="company"
+      required
+      value={formData.company}
+      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+      className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+      placeholder="Your company name"
+    />
+  </div>
+
+  {/* Designation */}
+  <div>
+    <label htmlFor="designation" className="block text-stone-700 mb-1 text-md">Designation</label>
+    <select
+      id="designation"
+      value={formData.designation}
+      onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
+      className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm outline-none"
+      required
+    >
+      <option value="" disabled hidden>Select designation</option>
+      <option value="Buyer">Buyer</option>
+      <option value="Merchandiser">Merchandiser</option>
+      <option value="Founder">Founder</option>
+      <option value="CEO">CEO</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  {/* Email */}
+  <div>
+    <label htmlFor="email" className="block text-stone-700 mb-1 text-md">Email *</label>
+    <input
+      type="email"
+      id="email"
+      required
+      value={formData.email}
+      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+      placeholder="your@email.com"
+    />
+  </div>
+
+  {/* Phone */}
+  <div>
+    <label htmlFor="phone" className="block text-stone-700 mb-1 text-md">Phone (Optional)</label>
+    <input
+      type="tel"
+      id="phone"
+      value={formData.phone}
+      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+      className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+      placeholder="+1 (234) 567-8900"
+    />
+  </div>
+
+  {/* Inquiry Type */}
+  <div>
+    <label htmlFor="inquiry" className="block text-stone-700 mb-1 text-md">Type of Inquiry</label>
+    <select
+      id="inquiry"
+      value={formData.inquiry}
+      onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
+      className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+    >
+      <option>General Inquiry</option>
+      <option>Wholesale/Trade</option>
+      <option>Custom Order</option>
+      <option>Event/Wedding</option>
+      <option>Product Information</option>
+    </select>
+  </div>
+
+  {/* Message */}
+  <div>
+    <label htmlFor="message" className="block text-stone-700 mb-1 text-md">Message *</label>
+    <textarea
+      id="message"
+      rows={2}
+      required
+      value={formData.message}
+      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+      className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm resize-none"
+      placeholder="Share your requirements or custom design ideas..."
+    ></textarea>
+  </div>
+
+  {/* Submit */}
+             <div>
+             <button
+               type="submit"
+               className="w-full px-6 py-3 mb-16 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-colors duration-300 shadow-sm"
+                      >
+               Send Message
+             </button>
+           </div>
+         </form>
+
+
+              <div className="border-t border-stone-200">
               <h3 className="text-lg text-stone-800 mb-3">
                 For Trade & Wholesale Inquiries
               </h3>
@@ -151,120 +292,6 @@ export function ContactPage({ onBack }: ContactPageProps) {
               </p>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <div className="bg-stone-50 rounded-2xl p-8 lg:p-12">
-            <h2 className="text-2xl text-stone-800 mb-6">Send Us a Message</h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-stone-700 mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  required
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent transition-all duration-300"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-stone-700 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent transition-all duration-300"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-stone-700 mb-2">
-                  Phone (Optional)
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent transition-all duration-300"
-                  placeholder="+1 (234) 567-8900"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="inquiry" className="block text-stone-700 mb-2">
-                  Type of Inquiry
-                </label>
-                <select
-                  id="inquiry"
-                  value={formData.inquiry}
-                  onChange={(e) =>
-                    setFormData({ ...formData, inquiry: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent transition-all duration-300"
-                >
-                  <option>General Inquiry</option>
-                  <option>Wholesale/Trade</option>
-                  <option>Custom Order</option>
-                  <option>Event/Wedding</option>
-                  <option>Product Information</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-stone-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-8 py-4 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-
-        
-        <div className="mb-16">
-          <h2 className="text-2xl text-stone-800 mb-6 text-center">
-            Find Our Showroom
-          </h2>
-          <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg border border-stone-200">
-            
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3390108307194!2d77.38283687475115!3d28.619599984669087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff39a35ee69%3A0x954d9b1c21dcc7b4!2sSuorya%20Exports%20Imports%20Enterprises!5e0!3m2!1sen!2sin!4v1759751159815!5m2!1sen!2sin" width="100%" height="600"  loading="lazy" ></iframe>
-
-          </div>
-          
         </div>
       </div>
     </div>
