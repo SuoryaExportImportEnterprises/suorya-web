@@ -24,7 +24,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
     designation: "",
     email: "",
     phone: "",
-    inquiry: "General Inquiry",
+    inquiry: "",
     message: "",
   });
 
@@ -54,7 +54,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
       designation: "",
       email: "",
       phone: "",
-      inquiry: "General Inquiry",
+      inquiry: "",
       message: "",
     });
   };
@@ -114,7 +114,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
                   <div>
                     <h3 className="text-lg text-stone-800 mb-1">Email Us</h3>
                     <a
-                      href="mailto:hello@suorya.com"
+                      href="mailto:info@suorya.co.in"
                       className="text-orange-600 hover:text-orange-700 transition-colors duration-300"
                     >
                       info@suorya.co.in
@@ -248,7 +248,9 @@ export function ContactPage({ onBack }: ContactPageProps) {
       value={formData.inquiry}
       onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
       className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+      required
     >
+      <option value="" disabled hidden>Select type</option>
       <option>General Inquiry</option>
       <option>Wholesale/Trade</option>
       <option>Custom Order</option>
@@ -275,7 +277,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
              <button
                type="submit"
                className="w-full px-6 py-3 mb-16 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-colors duration-300 shadow-sm"
-                      >
+              >
                Send Message
              </button>
            </div>
