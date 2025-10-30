@@ -8,7 +8,6 @@ const navigationItems = [
   "Ribbons",
   "Trims",
   "Bows",
-  "Tree Toppers",
   "Tree Skirts",
   "Spool",
 ];

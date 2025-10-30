@@ -86,14 +86,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   Bows
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => handleNavigate("tree-toppers")}
-                  className="hover:text-orange-400 transition-colors duration-300 text-left"
-                >
-                  Tree Toppers
-                </button>
-              </li>
+             
               <li>
                 <button
                   onClick={() => handleNavigate("tree-skirts")}
