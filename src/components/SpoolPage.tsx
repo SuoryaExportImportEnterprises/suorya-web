@@ -12,12 +12,16 @@ function SpoolCard({ title, description, imageUrl, index }: SpoolCardProps) {
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       {/* Image Container */}
       <div style={{ position: 'relative', marginBottom: '2rem', width: '100%' }}>
-        <div style={{ 
-          position: 'relative', 
-          overflow: 'hidden', 
-          borderRadius: '1rem', 
-          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' 
-        }}>
+        <div 
+          className="spool-image-container"
+          style={{ 
+            position: 'relative', 
+            overflow: 'hidden',
+            borderRadius: '1rem', 
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', 
+            transition: 'all 0.5s ease',
+          }}
+        >
           <div style={{ position: 'relative', paddingBottom: '60%', overflow: 'hidden' }}>
             <ImageWithFallback
               src={imageUrl}
@@ -29,8 +33,11 @@ function SpoolCard({ title, description, imageUrl, index }: SpoolCardProps) {
                 width: '100%', 
                 height: '100%', 
                 objectFit: 'cover',
-                objectPosition: 'center 46%'
+                objectPosition: 'center 46%',
+                transition: 'transform 0.6s ease',
+                borderRadius: '1rem',
               }}
+              className="spool-image"
             />
           </div>
           
@@ -93,6 +100,17 @@ function SpoolCard({ title, description, imageUrl, index }: SpoolCardProps) {
           {description}
         </p>
       </div>
+
+      {/* Hover effect styling */}
+      <style>{`
+        .spool-image-container:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 25px 30px -10px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .spool-image-container:hover .spool-image {
+          transform: scale(1.05);
+        }
+      `}</style>
     </div>
   );
 }
@@ -181,13 +199,14 @@ export function SpoolPage() {
         }
         
         .header-title {
-          font-family: serif;
-          color: #ea580c;
-          margin-bottom: 1rem;
-          fontSize: 1.875rem;
-          fontWeight: 500;
-          lineHeight: 1.5;
+        font-family: serif;
+        color: #ea580c;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.5;
         }
+
         
         .header-description {
           color: #4b5563;
@@ -276,7 +295,7 @@ export function SpoolPage() {
           {/* Bottom decorative element */}
           <div className="footer-section">
             <p className="footer-text">
-              Two foundations, one vision — crafted with purpose, wound with care.
+              Two foundations, one vision - crafted with purpose, wound with care.
             </p>
           </div>
         </div>

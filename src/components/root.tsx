@@ -29,7 +29,7 @@ export function App() {
     <div className="relative">
       {currentPage === "home" && (
         <>
-          <Hero onNavigate={setCurrentPage} />
+          <Hero/>
           <AboutUs />
           <PortfolioGrid />
           <ProductCatalog />
