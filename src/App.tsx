@@ -13,8 +13,7 @@ import { ScrollableCategoryPage } from "./components/ScrollableCategoryPage";
 import { SimpleCategoryPage } from "./components/SimpleCategoryPage";
 import { SearchResults } from "./components/SearchResults";
 import { Footer } from "./components/Footer";
-//@ts-ignore
-import { SpoolPage } from "./components/spoolPage.tsx";
+import { SpoolPage } from "./components/SpoolPage.tsx";
 
 const generateImages = (fileNames: string[], baseName: string, pathKey: string) => {
   return fileNames.map((fileName, i) => {
