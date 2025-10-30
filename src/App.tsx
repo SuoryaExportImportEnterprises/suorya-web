@@ -283,12 +283,12 @@ const categoryData = {
     coverImageUrl: "/cover-images/spool cover.jpeg",
     images: generateImages(['paperspool-1.jpg', 'woodenspool-2.png'], "Ribbon Spool", "spools"),
   },
-  "tree-toppers": {
-    type: "simple" as const,
-    name: "Tree Toppers",
-    coverImageUrl: "/cover-images/treetop_final.webp",
-    images: generateImages(['top1.avif', 'top2.jpg', 'top3.jpg'], "Tree Topper", "treetoppers"),
-  },
+  // "tree-toppers": {
+  //   type: "simple" as const,
+  //   name: "Tree Toppers",
+  //   coverImageUrl: "/cover-images/treetop_final.webp",
+  //   images: generateImages(['top1.avif', 'top2.jpg', 'top3.jpg'], "Tree Topper", "treetoppers"),
+  // },
   "tree-skirts": {
     type: "simple" as const,
     name: "Tree Skirts",
