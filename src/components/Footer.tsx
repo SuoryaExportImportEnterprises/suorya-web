@@ -1,3 +1,4 @@
+import { Mail, MapPin, Phone } from "lucide-react";
 interface FooterProps {
   onNavigate: (page: string) => void;
 }
@@ -86,7 +87,6 @@ export function Footer({ onNavigate }: FooterProps) {
                   Bows
                 </button>
               </li>
-             
               <li>
                 <button
                   onClick={() => handleNavigate("tree-skirts")}
@@ -106,21 +106,47 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact Us Section - CLEAN FORMAT LIKE IMAGE */}
           <div>
-            <h4 className="text-white mb-4">Stay Updated</h4>
-            <p className="text-sm mb-4">
-              Subscribe for new collection updates and design inspiration
-            </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-3 py-2 bg-stone-800 border border-stone-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 text-sm"
-              />
-              <button className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors duration-300 text-sm">
-                Subscribe
-              </button>
+            <h4 className="text-white mb-4">Contact Us</h4>
+            <div className="space-y-3 text-sm leading-relaxed">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-1 text-orange-400 flex-shrink-0" />
+                <p>
+                  D139, D Block, Sector 63, Noida,
+                  <br />
+                  Hazratpur Wajidpur, Uttar Pradesh 201309
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <Mail className="w-4 h-4 mt-1 text-orange-400 flex-shrink-0" />
+                <a
+                  href="mailto:info@suorya.co.in"
+                  className="hover:text-orange-400 transition-colors duration-300"
+                >
+                  info@suorya.co.in
+                </a>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-1 text-orange-400 flex-shrink-0" />
+                <a
+                  href="tel:+919876543210"
+                  className="hover:text-orange-400 transition-colors duration-300"
+                >
+                  +91 98765 43210
+                </a>
+              </div>
+
+              <a
+                href="https://maps.app.goo.gl/BQBkuTU4SDMNY1sG9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-400 hover:text-orange-500 transition-colors duration-300 inline-block mt-1"
+              >
+                Show in map →
+              </a>
             </div>
           </div>
         </div>
