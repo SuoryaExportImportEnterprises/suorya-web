@@ -13,6 +13,8 @@ import { ScrollableCategoryPage } from "./components/ScrollableCategoryPage";
 import { SimpleCategoryPage } from "./components/SimpleCategoryPage";
 import { SearchResults } from "./components/SearchResults";
 import { Footer } from "./components/Footer";
+//@ts-ignore
+import { SpoolPage } from "./components/spoolPage.tsx";
 
 const generateImages = (fileNames: string[], baseName: string, pathKey: string) => {
   return fileNames.map((fileName, i) => {
@@ -460,6 +462,28 @@ export default function App() {
   if (currentPage.type === "simple-category") {
     const category = categoryData[currentPage.categoryKey as keyof typeof categoryData];
     if (category.type !== "simple") return null;
+
+    if (currentPage.categoryKey === "spool") {
+    return (
+      <div className="min-h-screen">
+        <Navigation
+          onNavigate={handleNavigate}
+          onSearch={handleSearch}
+          currentPage="category"
+        />
+        {/* <SpoolPage
+          categoryName={category.name}
+          coverImageUrl={category.coverImageUrl}
+          images={category.images}
+          onBack={() => handleNavigate("home")}
+        /> */}
+
+        <SpoolPage />
+
+        <Footer onNavigate={handleNavigate} />
+      </div>
+    );
+  }
 
     return (
       <div className="min-h-screen">
