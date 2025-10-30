@@ -1,7 +1,7 @@
 interface HeroProps {
   onNavigate: (page: string) => void;
 }
-export function Hero({ onNavigate }: HeroProps) {
+export function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Overlay */}
