@@ -42,7 +42,7 @@ export function ScrollableCategoryPage({
       </div>
 
       {/* Cover Section - Reduced height */}
-      <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
+      {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
         <ImageWithFallback
           src={coverImageUrl}
           alt={categoryName}
@@ -59,7 +59,7 @@ export function ScrollableCategoryPage({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Subcategory Sections */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
