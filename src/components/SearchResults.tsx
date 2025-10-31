@@ -1,3 +1,4 @@
+import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -6,8 +7,11 @@ interface SearchResult {
   type: string;
   name: string;
   category?: string;
-  description: string;
-  imageUrl: string;
+  description?: string;
+  imageUrl?: string;
+  matches?: any[];
+  meta?: any;
+  path?: string;
 }
 
 interface SearchResultsProps {
@@ -57,8 +61,9 @@ export function SearchResults({
             {results.map((result, index) => (
               <button
                 key={index}
+                type="button"
                 onClick={() => onResultClick(result)}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left"
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-stone-100">
                   <ImageWithFallback
@@ -67,6 +72,7 @@ export function SearchResults({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
+
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs px-2 py-1 bg-orange-100 text-orange-600 rounded-full">
@@ -78,9 +84,11 @@ export function SearchResults({
                       </span>
                     )}
                   </div>
+
                   <h3 className="text-xl text-stone-800 mb-2 group-hover:text-orange-600 transition-colors duration-300">
                     {result.name}
                   </h3>
+
                   <p className="text-stone-600 text-sm leading-relaxed">
                     {result.description}
                   </p>
