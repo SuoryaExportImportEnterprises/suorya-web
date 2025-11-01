@@ -55,7 +55,7 @@ const categoryData = {
     coverImageUrl: "/cover-images/bow-coverimage.webp",
     subcategories: [
       { name: "JUMBO BOW", description: "Grand statements for bold celebrations.", imageUrl: "/cover-images/bows/jumbo.jpg" },
-      { name: "SATIN BOW", description: "Soft satin bows — understated yet captivating.", imageUrl: "/cover-images/satin-bow-cover.png" },
+      { name: "SATIN BOW", description: "Soft satin bows - understated yet captivating.", imageUrl: "/cover-images/satin-bow-cover.png" },
       { name: "SHEER BOW", description: "Light and airy bows for subtle charm.", imageUrl: "/cover-images/bows/sheer.jpg" },
       { name: "WIRED VELVET BOW", description: "Velvet elegance shaped to perfection.", imageUrl: "/cover-images/bows/wiredvelvet.jpg" },
       { name: "WINE CHARMS", description: "Whimsical accents for festive gatherings.", imageUrl: "/cover-images/bows/winecharms.jpg" },

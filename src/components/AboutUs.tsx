@@ -20,14 +20,24 @@ export function AboutUs() {
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
+          {/* <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
             <img
               src="/home/father-daughter.jpg"
               alt="Suorya Craftsmanship"
               className="w-full h-full object-cover aspect-[16/10]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent"></div>
-          </div>
+          </div> */}
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center bg-stone-100">
+  <img
+    src="/home/father-daughter.jpg"
+    alt="Suorya Craftsmanship"
+    className="w-full h-full object-contain rounded-2xl"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent rounded-2xl"></div>
+</div>
+
+
 
           {/* Story Content */}
           <div className="space-y-8">
@@ -43,13 +53,13 @@ export function AboutUs() {
               - steady, evolving, and endlessly devoted to creating something that lasts.
             </p>
 
-            <blockquote className="border-l-4 border-orange-600 pl-6 italic text-stone-700">
+            {/* <blockquote className="border-l-4 border-orange-600 pl-6 italic text-stone-700">
               "With more than 30 years of experience working with top
               international brands, we have followed the best export practices.
               Our products meet international quality standards. We are SEDEX
               certified. These certifications reflect our strong commitment
               towards ethical and responsible practices."
-            </blockquote>
+            </blockquote> */}
           </div>
         </div>
       </div>
