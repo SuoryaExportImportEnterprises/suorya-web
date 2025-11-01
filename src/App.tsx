@@ -17,6 +17,7 @@ import { Footer } from "./components/Footer";
 import { SpoolPage } from "./components/SpoolPage.tsx";
 import { useSearchFuse, runFuseSearch } from "./lib/search/useSearch";
 import categoryData from "./data/categoryData";
+import OurEthos from "./components/OurEthos";
 
 type PageState =
   | { type: "home" }
@@ -176,14 +177,15 @@ export default function App() {
       <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="home" />
       <Hero />
       <AboutUs />
-      <StorylineSection
+      <OurEthos />
+      {/* <StorylineSection
         title="Heritage & Expertise"
         subtitle="Our Foundation"
         description="With over three decades of experience, Suorya Exports stands as a symbol of trust, craftsmanship, and innovation. Our heritage is built on a foundation of quality - each ribbon, trim, and décor piece crafted with meticulous attention to detail and a promise of perfection."
         imageUrl="/home/heritage.jpg"
         imageAlt="Elegant craftsmanship"
         bgColor="bg-white"
-      />
+      /> */}
       <StorylineSection
         title="Creativity & Collaboration"
         subtitle="A Partnership of Vision"
@@ -201,6 +203,9 @@ export default function App() {
         reverse={true}
         bgColor="bg-stone-50"
       />
+      
+      <VisionSection />
+      <PortfolioGrid />
       <StorylineSection
         title="Beyond Wrapping"
         subtitle="Where Our Ribbons Live"
@@ -209,8 +214,6 @@ export default function App() {
         imageAlt="Festive decoration"
         bgColor="bg-white"
       />
-      <VisionSection />
-      <PortfolioGrid />
       <ProductCatalog />
       <Footer onNavigate={handleNavigate} />
     </div>
