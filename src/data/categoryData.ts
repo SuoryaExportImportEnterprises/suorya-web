@@ -38,7 +38,7 @@ const categoryData = {
     name: "Trims",
     coverImageUrl: "/cover-images/cover_ricrac.jpg",
     subcategories: [
-      { name: "BUNTING", description: "Joyful trims perfect for festive flair.", imageUrl: "/cover-images/buntingcover.png" },
+      { name: "BUNTING", description: "Joyful trims perfect for festive aesthetic flair.", imageUrl: "/cover-images/buntingcover.png" },
       { name: "RIC RAC", description: "Playful zigzags that dance along your designs.", imageUrl: "/cover-images/ric-rac-cover.png" },
       { name: "BRAIDS", description: "Classic braids for a touch of vintage craft.", imageUrl: "/cover-images/ribbon-cover/braided cover.png" },
       { name: "POMS", description: "Soft pom-poms that add whimsy and fun.", imageUrl: "/cover-images/trims/poms.jpg" },

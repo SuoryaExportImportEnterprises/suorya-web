@@ -187,7 +187,15 @@ export default function App() {
       <StorylineSection
         title="Creativity & Collaboration"
         subtitle="A Partnership of Vision"
-        description="At Suorya Exports, creativity thrives through collaboration. Our in-house design team works hand-in-hand with our global buying partners to bring visionary ideas to life."
+        description="At Suorya, creativity is a collaborative journey. 
+        Our design and production teams work hand-in-hand from concept to creation - brainstorming, 
+        sketching, sampling, and refining until the idea feels just right. 
+        We embrace diverse perspectives, encourage experimentation, and value the harmony that 
+        comes when people create together. 
+        Every season, we challenge ourselves to explore new materials, techniques, colours, 
+        and textures, ensuring each product is thoughtful, relevant, and beautifully crafted. 
+        It’s this blend of imagination, teamwork, and disciplined execution that shapes the 
+        collections our customers love."
         imageUrl="/home/creative.png"
         imageAlt="Creative collaboration"
         reverse={true}

@@ -73,7 +73,9 @@ export function CategoryLandingPage({
               onClick={() => onSubcategoryClick(subcategory.name)}
               className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-left"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-stone-100">
+              {/* <div className="aspect-[4/3] overflow-hidden bg-stone-100"> */}
+              <div className="aspect-[4/3] overflow-hidden bg-stone-100 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-2xl">
+
                 <ImageWithFallback
                   src={subcategory.imageUrl}
                   alt={subcategory.name}
