@@ -162,7 +162,7 @@ export function QuoteBanner() {
         }}
       >
         <p
-          className="text-lg md:text-xl leading-relaxed text-stone-700 italic"
+          className="text-lg md:text-xl leading-relaxed text-stone-700"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           "With more than 30 years of experience working with top international
