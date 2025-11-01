@@ -18,6 +18,7 @@ import { SpoolPage } from "./components/SpoolPage.tsx";
 import { useSearchFuse, runFuseSearch } from "./lib/search/useSearch";
 import categoryData from "./data/categoryData";
 import OurEthos from "./components/OurEthos";
+import { QuoteBanner } from "./components/QuoteBanner";
 
 type PageState =
   | { type: "home" }
@@ -188,7 +189,7 @@ export default function App() {
       /> */}
       <StorylineSection
         title="Creativity & Collaboration"
-        subtitle="A Partnership of Vision"
+        subtitle="Co-Creating Value, Season After Season"
         description="At Suorya, creativity is a collaborative journey. 
         Our design and production teams work hand-in-hand from concept to creation - brainstorming, 
         sketching, sampling, and refining until the idea feels just right. 
@@ -203,7 +204,7 @@ export default function App() {
         reverse={true}
         bgColor="bg-stone-50"
       />
-      
+      <QuoteBanner />
       <VisionSection />
       <PortfolioGrid />
       <StorylineSection
