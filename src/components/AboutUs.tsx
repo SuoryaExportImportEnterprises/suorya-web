@@ -13,7 +13,7 @@ export function AboutUs() {
             A Father - Daughter Journey!
           </h2>
           <p className="text-stone-600 text-lg mt-2">
-    At the heart of the business is a passionate father–daughter duo, blending expertise in operations and design.
+    At the heart of the business is a passionate father - daughter duo, blending expertise in operations and design.
           </p>
         </div>
 
@@ -36,21 +36,22 @@ export function AboutUs() {
   />
   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent rounded-2xl"></div>
 </div>
-
-
-
           {/* Story Content */}
           <div className="space-y-8">
             <p className="text-lg text-stone-600 leading-relaxed">
               Suorya Exports is a story of legacy, creativity, and commitment - a father’s 30+ years of mastery in textiles
-              joined by his daughter’s fresh design perspective. Together, we’ve built more than a business; we’ve nurtured 
-              a partnership rooted in trust, innovation, and shared vision. With every order, our design and production team 
-              works hand in hand to ensure timely delivery with focus on quality.
-              
+              joined by his daughter’s modern and trend-led design approach. Together, we’ve built more than a business - we’ve
+              nurtured a partnership rooted in trust, purposeful innovation, and a shared vision for future growth. From the 
+              first sketch to the final stitch, our design and production teams stay closely 
+              connected through the process, making sure every piece is crafted with care, detail, and the quality it deserves.
+              From the first sketch to the final stitch, our design and production teams work in sync to ensure every piece is
+              thoughtfully made with precision and consistent quality.
+              <br></br>
               What drives us isn’t just the fabric or the finish - it’s the purpose stitched into every creation. Each 
               piece we make carries a part of our story: the patience of years spent perfecting the craft, the curiosity to
-              explore new ideas, and the joy of seeing imagination take form. For us, quality is the reflection of who we are
-              - steady, evolving, and endlessly devoted to creating something that lasts.
+              explore new ideas, and the joy of seeing ideas come to life. 
+              {/* For us, quality is the reflection of who we are
+              - steady, evolving, and endlessly devoted to creating something that lasts. */}
             </p>
 
             {/* <blockquote className="border-l-4 border-orange-600 pl-6 italic text-stone-700">

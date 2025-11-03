@@ -1,12 +1,12 @@
 import React from "react";
-import { Truck, Users, Sparkles, BadgeCheck, Layers } from "lucide-react";
+import { Truck, Users, Sparkles, BadgeCheck, BadgeDollarSign , Group } from "lucide-react";
 export default function OurEthos() {
   const items = [
-    { key: "timely", label: "Timely Delivery", Icon: Truck },
-    { key: "collab", label: "Collaborative Team", Icon: Users },
     { key: "craft", label: "Premium Craftsmanship", Icon: Sparkles },
     { key: "quality", label: "Focus on Quality", Icon: BadgeCheck },
-    { key: "trend", label: "In-trend products", Icon: Layers },
+    { key: "timely", label: "Timely Delivery", Icon: Truck },
+    { key: "collab", label: "Design Collaboration", Icon: Group },
+    { key: "trend", label: "Competitive Pricing", Icon: BadgeDollarSign },
   ];
 
   return (
@@ -14,13 +14,13 @@ export default function OurEthos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-4">
           <p className="text-orange-600 tracking-widest uppercase text-sm">
-            Our Values
+            We build what we’d want to receive
           </p>
           <h2
             id="ethos-heading"
             className="text-2xl md:text-3xl font-semibold text-stone-800"
           >
-            Our Ethos
+            What We Deliver
           </h2>
         </div>
 

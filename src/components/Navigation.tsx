@@ -3,13 +3,15 @@ import { Menu, X, Search } from "lucide-react";
 import { Button } from "./ui/button";
 //@ts-ignore
 import logoImage from "/home/logoImage.png";
+//@ts-ignore
+import favicon from "/home/favicon.png";
 
 const navigationItems = [
   "Ribbons",
   "Trims",
   "Bows",
-  "Tree Skirts",
-  "Spool",
+  "Garlands",
+  "Packaging",
 ];
 
 interface NavigationProps {
@@ -46,9 +48,11 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
               className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
             >
               <img
-                src={logoImage}
+                src={favicon}
                 alt="Suorya Logo"
-                className="h-12 w-12 object-contain"
+                className="object-contain"
+                style={{ height: "3.9rem", width: "3.9rem" }}
+                // className="h-12 w-12 object-contain"
               />
               <span className="text-3xl tracking-wider text-stone-800">
                 Suorya

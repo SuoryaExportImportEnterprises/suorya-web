@@ -63,7 +63,7 @@ const categoryData = {
     ],
   },
 
-  "tree-skirts": {
+  "garlands": {
     type: "complex" as const,
     name: "Tree Skirts",
     coverImageUrl: "/cover-images/treeskirtscover.jpeg",
@@ -76,9 +76,9 @@ const categoryData = {
     ],
   },
 
-  spool: {
+  packaging: {
     type: "simple" as const,
-    name: "Spools",
+    name: "Packaging",
     coverImageUrl: "/cover-images/spool cover.jpeg",
     images: generateImages(['paperspool-1.jpg', 'woodenspool-2.png'], "Ribbon Spool", "spools"),
   },

@@ -82,7 +82,7 @@ function SpoolCard({ title, description, imageUrl, index }: SpoolCardProps) {
         <h2 style={{ 
           fontFamily: "serif", 
           color: "#ea580c", 
-          marginBottom: '1.25rem',
+          marginBottom: '0.5rem',
           fontSize: '1.5rem',
           fontWeight: 500,
           lineHeight: 1.5
@@ -275,7 +275,7 @@ export function SpoolPage() {
             </h1>
             
             <p className="header-description">
-              Discover the foundations of our craft. Every creation starts here, with the spools that hold our craft together. 
+              Every product starts here. Spools set the standard for durability, finish, and quality across our entire collection.       
             </p>
           </div>
           
@@ -290,13 +290,6 @@ export function SpoolPage() {
                 index={index}
               />
             ))}
-          </div>
-          
-          {/* Bottom decorative element */}
-          <div className="footer-section">
-            <p className="footer-text">
-              Two foundations, one vision - crafted with purpose, wound with care.
-            </p>
           </div>
         </div>
       </section>
