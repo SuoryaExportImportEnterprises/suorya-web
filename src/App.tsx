@@ -105,8 +105,8 @@ export default function App() {
     );
   }
 
-  if (currentPage.type === "simple-category" && currentPage.categoryKey === "spool") {
-    const category = categoryData["spool"];
+  if (currentPage.type === "simple-category" && currentPage.categoryKey === "packaging") {
+    const category = categoryData["packaging"];
     return (
       <div className="min-h-screen">
         <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="category" />
@@ -207,15 +207,7 @@ export default function App() {
       <QuoteBanner />
       <VisionSection />
       <PortfolioGrid />
-      <StorylineSection
-        title="Beyond Wrapping"
-        subtitle="Where Our Ribbons Live"
-        description="We’re not just about wrapping - we’re about redefining it. Our collections go beyond ribbons and décor; they capture emotion, artistry, and the joy of celebration."
-        imageUrl="/home/beyond2.jpg"
-        imageAlt="Festive decoration"
-        bgColor="bg-white"
-      />
-      <ProductCatalog />
+      
       <Footer onNavigate={handleNavigate} />
     </div>
   );
