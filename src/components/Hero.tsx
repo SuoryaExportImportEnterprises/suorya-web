@@ -7,7 +7,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/home/header.webp"
+          src="/cover-images/ribbon-cover/stripecover.jpg"
           alt="Luxury ribbons and crafts"
           className="w-full h-full object-cover"
         />
