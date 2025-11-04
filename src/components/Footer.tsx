@@ -135,7 +135,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   href="tel:+919876543210"
                   className="hover:text-orange-400 transition-colors duration-300"
                 >
-                  +91 98765 43210
+                  0120-4325089
                 </a>
               </div>
 

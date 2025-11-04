@@ -24,7 +24,7 @@ export function SimpleCategoryPage({
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <Button
           variant="ghost"
           onClick={onBack}
@@ -33,7 +33,7 @@ export function SimpleCategoryPage({
           <ArrowLeft className="w-4 h-4" />
           Back to Home
         </Button>
-      </div>
+      </div> */}
 
       {/* Cover Section - Reduced height */}
       {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
@@ -54,6 +54,27 @@ export function SimpleCategoryPage({
           </div>
         </div>
       </div> */}
+
+      {/* Cover Section - Refined aesthetic */}
+<div className="relative h-[220px] md:h-[300px] w-full overflow-hidden mb-16">
+  <ImageWithFallback
+    src={coverImageUrl}
+    alt={categoryName}
+    className="w-full h-full object-cover brightness-110"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="text-center text-white space-y-2 px-4">
+      <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-wide drop-shadow-md">
+        {categoryName}
+      </h1>
+      <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90">
+        Explore our premium collection
+      </p>
+    </div>
+  </div>
+</div>
+
 
       {/* Image Grid - Max 4 images, increased spacing */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
