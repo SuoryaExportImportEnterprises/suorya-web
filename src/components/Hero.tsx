@@ -21,10 +21,13 @@ export function Hero() {
             <p className="text-orange-600 tracking-widest uppercase text-sm">
               Premium Ribbons & Décor
             </p>
-            <h1 className="md:text-6xl lg:text-7xl text-stone-800 leading-tight font-[Adamina] text-[48px] text-left">
-              Crafting Elegance,
-              <br />
-              One Ribbon at a Time
+            <h1 className="md:text-4xl lg:text-7xl text-stone-800 leading-tight font-[Adamina] text-[42px] md:text-[48px] lg:text-[64px] text-left">
+              <span className="block whitespace-nowrap">
+                Crafting pieces that&nbsp;stay,
+              </span>
+              <span className="block">
+                even after trends fade.
+              </span>
             </h1>
           </div>
 
