@@ -7,6 +7,7 @@ import logoImage from "/home/logoImage.png";
 import favicon from "/home/favicon.png";
 
 const navigationItems = [
+  "Home",
   "Ribbons",
   "Trims",
   "Bows",
@@ -67,7 +68,7 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
                 onClick={() => handleNavClick(item)}
                 className={`text-stone-700 hover:text-orange-600 transition-colors duration-300 ${
                   currentPage === item.toLowerCase().replace(/\s+/g, "-")
-                    ? "text-orange-600 font-medium"
+                    ? "text-orange-600"
                     : ""
                 }`}
               >
@@ -149,7 +150,7 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
                 onClick={() => handleNavClick(item)}
                 className={`block w-full text-left py-2 text-stone-700 hover:text-orange-600 ${
                   currentPage === item.toLowerCase().replace(/\s+/g, "-")
-                    ? "text-orange-600 font-medium"
+                    ? "text-orange-600"
                     : ""
                 }`}
               >
