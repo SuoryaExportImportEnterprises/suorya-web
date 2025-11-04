@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "./ui/button";
-//@ts-ignore
+// @ts-ignore
 import logoImage from "/home/logoImage.png";
-//@ts-ignore
+// @ts-ignore
 import favicon from "/home/favicon.png";
 
 const navigationItems = [
@@ -52,7 +52,6 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
                 alt="Suorya Logo"
                 className="object-contain"
                 style={{ height: "3.9rem", width: "3.9rem" }}
-                // className="h-12 w-12 object-contain"
               />
               <span className="text-3xl tracking-wider text-stone-800">
                 Suorya
@@ -66,7 +65,11 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="text-stone-700 hover:text-orange-600 transition-colors duration-300"
+                className={`text-stone-700 hover:text-orange-600 transition-colors duration-300 ${
+                  currentPage === item.toLowerCase().replace(/\s+/g, "-")
+                    ? "text-orange-600 font-medium"
+                    : ""
+                }`}
               >
                 {item}
               </button>
@@ -75,7 +78,9 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
             {/* Contact Us Button */}
             <button
               onClick={() => onNavigate("contact")}
-              className="text-stone-700 hover:text-orange-600 transition-colors duration-300"
+              className={`text-stone-700 hover:text-orange-600 transition-colors duration-300 ${
+                currentPage === "contact" ? "text-orange-600 font-medium" : ""
+              }`}
             >
               Contact Us
             </button>
@@ -142,7 +147,11 @@ export function Navigation({ onNavigate, onSearch, currentPage }: NavigationProp
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="block w-full text-left py-2 text-stone-700 hover:text-orange-600"
+                className={`block w-full text-left py-2 text-stone-700 hover:text-orange-600 ${
+                  currentPage === item.toLowerCase().replace(/\s+/g, "-")
+                    ? "text-orange-600 font-medium"
+                    : ""
+                }`}
               >
                 {item}
               </button>

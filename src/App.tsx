@@ -1,4 +1,7 @@
-import { useState } from "react";
+// new useeffect
+import { useState , useEffect } from "react";
+// new
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { AboutUs } from "./components/AboutUs";
@@ -8,8 +11,6 @@ import { ProductCatalog } from "./components/ProductCatalog";
 import { PortfolioGrid } from "./components/PortfolioGrid";
 import { ContactPage } from "./components/ContactPage";
 import { CategoryLandingPage } from "./components/CategoryLandingPage";
-import { SubcategoryDetailPage } from "./components/SubcategoryDetailPage";
-import { ScrollableCategoryPage } from "./components/ScrollableCategoryPage";
 import { SimpleCategoryPage } from "./components/SimpleCategoryPage";
 import { SearchResults } from "./components/SearchResults";
 import { Footer } from "./components/Footer";
@@ -19,6 +20,8 @@ import { useSearchFuse, runFuseSearch } from "./lib/search/useSearch";
 import categoryData from "./data/categoryData";
 import OurEthos from "./components/OurEthos";
 import { QuoteBanner } from "./components/QuoteBanner";
+import { CategoryPage } from "./pages/CategoryPage";
+
 
 type PageState =
   | { type: "home" }
@@ -34,22 +37,70 @@ export default function App() {
   const { fuse } = useSearchFuse(categoryData);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+// new
+  const navigate = useNavigate();
+//new
+  const location = useLocation();
 
-  const handleNavigate = (page: string) => {
-    if (page === "home") {
+// new
+  useEffect(() => {
+    const path = location.pathname.replace(/^\/+|\/+$/g, ""); 
+    if (path === "" || path === "/") {
       setCurrentPage({ type: "home" });
-    } else if (page === "contact") {
-      setCurrentPage({ type: "contact" });
-    } else if (categoryData[page as keyof typeof categoryData]) {
-      const category = categoryData[page as keyof typeof categoryData];
-      if (category.type === "complex") {
-        setCurrentPage({ type: "category-landing", categoryKey: page });
-      } else if (category.type === "simple") {
-        setCurrentPage({ type: "simple-category", categoryKey: page });
-      }
+      scrollToTop();
+      return;
     }
-    scrollToTop();
-  };
+    if (path === "contact") {
+      setCurrentPage({ type: "contact" });
+      scrollToTop();
+      return;
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+  const path = location.pathname.replace("/", "");
+  if (!path) {
+    setCurrentPage({ type: "home" });
+  } else if (path === "contact") {
+    setCurrentPage({ type: "contact" });
+  } else if (categoryData[path as keyof typeof categoryData]) {
+    const category = categoryData[path as keyof typeof categoryData];
+    if (category.type === "complex") {
+      setCurrentPage({ type: "category-landing", categoryKey: path });
+    } else {
+      setCurrentPage({ type: "simple-category", categoryKey: path });
+    }
+  }
+}, [location]);
+
+  //new new fn
+  const handleNavigate = (page: string) => {
+  if (page === "home") {
+    navigate("/");
+    setCurrentPage({ type: "home" });
+  } else if (page === "contact") {
+    navigate("/contact");
+    setCurrentPage({ type: "contact" });
+  } else if (categoryData[page as keyof typeof categoryData]) {
+    const category = categoryData[page as keyof typeof categoryData];
+
+    if (category.type === "complex") {
+      navigate(`/${page}`); // ✅ Update URL for complex category
+      setCurrentPage({ type: "category-landing", categoryKey: page });
+    } else if (category.type === "simple") {
+      navigate(`/${page}`); // ✅ Update URL for simple category
+      setCurrentPage({ type: "simple-category", categoryKey: page });
+    }
+  } else {
+    // fallback: go home
+    navigate("/");
+    setCurrentPage({ type: "home" });
+  }
+
+  scrollToTop();
+};
+
+
 
   const handleSearch = (query: string) => {
     if (!query || !query.trim()) {
@@ -173,42 +224,59 @@ export default function App() {
     );
   }
 
+  //new
   return (
+  <Routes>
+    <Route
+      path="/"
+      element={
+        <div className="min-h-screen">
+          <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="home" />
+          <Hero />
+          <AboutUs />
+          <OurEthos />
+          <StorylineSection
+            title="Creativity & Collaboration"
+            subtitle="Co-Creating Value, Season After Season"
+            description="At Suorya, creativity is a collaborative journey. Our design and production teams work hand-in-hand from concept to creation - brainstorming, sketching, sampling, and refining until the idea feels just right. We embrace diverse perspectives, encourage experimentation, and value the harmony that comes when people create together. Every season, we challenge ourselves to explore new materials, techniques, colours, and textures, ensuring each product is thoughtful, relevant, and beautifully crafted. It’s this blend of imagination, teamwork, and disciplined execution that shapes the collections our customers love."
+            imageUrl="/home/creative.png"
+            imageAlt="Creative collaboration"
+            reverse={true}
+            bgColor="bg-stone-50"
+          />
+          <QuoteBanner />
+          <VisionSection />
+          <PortfolioGrid />
+          <Footer onNavigate={handleNavigate} />
+        </div>
+      }
+    />
+
+    <Route
+      path="/contact"
+      element={
+        <div className="min-h-screen">
+          <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="contact" />
+          <ContactPage onBack={() => handleNavigate("home")} />
+          <Footer onNavigate={handleNavigate} />
+        </div>
+      }
+    />
+
+<Route
+  path="/:categoryKey"
+  element={
     <div className="min-h-screen">
-      <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="home" />
-      <Hero />
-      <AboutUs />
-      <OurEthos />
-      {/* <StorylineSection
-        title="Heritage & Expertise"
-        subtitle="Our Foundation"
-        description="With over three decades of experience, Suorya Exports stands as a symbol of trust, craftsmanship, and innovation. Our heritage is built on a foundation of quality - each ribbon, trim, and décor piece crafted with meticulous attention to detail and a promise of perfection."
-        imageUrl="/home/heritage.jpg"
-        imageAlt="Elegant craftsmanship"
-        bgColor="bg-white"
-      /> */}
-      <StorylineSection
-        title="Creativity & Collaboration"
-        subtitle="Co-Creating Value, Season After Season"
-        description="At Suorya, creativity is a collaborative journey. 
-        Our design and production teams work hand-in-hand from concept to creation - brainstorming, 
-        sketching, sampling, and refining until the idea feels just right. 
-        We embrace diverse perspectives, encourage experimentation, and value the harmony that 
-        comes when people create together. 
-        Every season, we challenge ourselves to explore new materials, techniques, colours, 
-        and textures, ensuring each product is thoughtful, relevant, and beautifully crafted. 
-        It’s this blend of imagination, teamwork, and disciplined execution that shapes the 
-        collections our customers love."
-        imageUrl="/home/creative.png"
-        imageAlt="Creative collaboration"
-        reverse={true}
-        bgColor="bg-stone-50"
-      />
-      <QuoteBanner />
-      <VisionSection />
-      <PortfolioGrid />
-      
+      <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="category" />
+      <CategoryPage key={location.pathname} />
       <Footer onNavigate={handleNavigate} />
     </div>
-  );
+  }
+/>
+
+
+    <Route path="/:category" element={<CategoryPage />} />
+  </Routes>
+);
+
 }
