@@ -61,18 +61,6 @@ export function ContactPage({ onBack }: ContactPageProps) {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <Button
-          variant="ghost"
-          onClick={onBack}
-          className="flex items-center gap-2 text-stone-700 hover:text-orange-600"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Home
-        </Button>
-      </div>
-
       {/* Page Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-16 space-y-4">
@@ -135,7 +123,7 @@ export function ContactPage({ onBack }: ContactPageProps) {
                       href="tel:+1234567890"
                       className="text-orange-600 hover:text-orange-700 transition-colors duration-300"
                     >
-                      +1 (234) 567-8900
+                      0120-4325089
                     </a>
                     <p className="text-sm text-stone-600 mt-1">
                       Mon-Sat, 9:30am - 6pm IST
