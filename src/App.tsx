@@ -177,7 +177,7 @@ const handleNavigate = (page: string) => {
     return (
       <div className="min-h-screen">
         <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="contact" />
-        <ContactPage onBack={() => handleNavigate("home")} />
+        <ContactPage/>
         <Footer onNavigate={handleNavigate} />
       </div>
     );
@@ -308,7 +308,8 @@ const handleNavigate = (page: string) => {
       element={
         <div className="min-h-screen">
           <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="contact" />
-          <ContactPage onBack={() => handleNavigate("home")} />
+
+          <ContactPage  />
           <Footer onNavigate={handleNavigate} />
         </div>
       }
