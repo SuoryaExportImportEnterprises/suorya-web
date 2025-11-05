@@ -21,6 +21,8 @@ import categoryData from "./data/categoryData";
 import OurEthos from "./components/OurEthos";
 import { QuoteBanner } from "./components/QuoteBanner";
 import { CategoryPage } from "./pages/CategoryPage";
+import DesignStudioPage from "./pages/DesignStudioPage";
+
 
 
 type PageState =
@@ -73,32 +75,80 @@ export default function App() {
   }
 }, [location]);
 
+useEffect(() => {
+  const path = location.pathname.replace(/^\/+|\/+$/g, ""); 
+  if (path === "") {
+    setCurrentPage({ type: "home" });
+  } else if (path === "contact") {
+    setCurrentPage({ type: "contact" });
+  } else if (path === "design-studio") {
+    setCurrentPage({ type: "design-studio" as any });
+  } else if (categoryData[path as keyof typeof categoryData]) {
+    const category = categoryData[path as keyof typeof categoryData];
+    if (category.type === "complex") {
+      setCurrentPage({ type: "category-landing", categoryKey: path });
+    } else {
+      setCurrentPage({ type: "simple-category", categoryKey: path });
+    }
+  } else {
+    setCurrentPage({ type: "home" });
+  }
+}, [location.pathname]);
+
   //new new fn
-  const handleNavigate = (page: string) => {
+//   const handleNavigate = (page: string) => {
+//   if (page === "home") {
+//     navigate("/");
+//     setCurrentPage({ type: "home" });
+//   } else if (page === "contact") {
+//     navigate("/contact");
+//     setCurrentPage({ type: "contact" });
+//   } else if (categoryData[page as keyof typeof categoryData]) {
+//     const category = categoryData[page as keyof typeof categoryData];
+
+//     if (category.type === "complex") {
+//       navigate(`/${page}`); // ✅ Update URL for complex category
+//       setCurrentPage({ type: "category-landing", categoryKey: page });
+//     } else if (category.type === "simple") {
+//       navigate(`/${page}`); // ✅ Update URL for simple category
+//       setCurrentPage({ type: "simple-category", categoryKey: page });
+//     }
+//   } else {
+//     // fallback: go home
+//     navigate("/");
+//     setCurrentPage({ type: "home" });
+//   }
+
+//   scrollToTop();
+// };
+
+
+const handleNavigate = (page: string) => {
   if (page === "home") {
     navigate("/");
     setCurrentPage({ type: "home" });
   } else if (page === "contact") {
     navigate("/contact");
     setCurrentPage({ type: "contact" });
+  } else if (page === "design-studio") { // <-- new
+    navigate("/design-studio");
+    setCurrentPage({ type: "design-studio" as any });
   } else if (categoryData[page as keyof typeof categoryData]) {
     const category = categoryData[page as keyof typeof categoryData];
-
     if (category.type === "complex") {
-      navigate(`/${page}`); // ✅ Update URL for complex category
+      navigate(`/${page}`);
       setCurrentPage({ type: "category-landing", categoryKey: page });
     } else if (category.type === "simple") {
-      navigate(`/${page}`); // ✅ Update URL for simple category
+      navigate(`/${page}`);
       setCurrentPage({ type: "simple-category", categoryKey: page });
     }
   } else {
-    // fallback: go home
     navigate("/");
     setCurrentPage({ type: "home" });
   }
-
   scrollToTop();
 };
+
 
 
 
@@ -245,7 +295,8 @@ export default function App() {
             bgColor="bg-stone-50"
           />
           <QuoteBanner />
-          <VisionSection />
+          {/* <VisionSection /> */}
+          
           <PortfolioGrid />
           <Footer onNavigate={handleNavigate} />
         </div>
@@ -276,6 +327,22 @@ export default function App() {
 
 
     <Route path="/:category" element={<CategoryPage />} />
+
+    <Route
+  path="/design-studio"
+  element={
+    <div className="min-h-screen">
+      <Navigation
+        onNavigate={handleNavigate}
+        onSearch={handleSearch}
+        currentPage="design-studio"
+      />
+      <DesignStudioPage />
+      <Footer onNavigate={handleNavigate} />
+    </div>
+  }
+/>
+
   </Routes>
 );
 
