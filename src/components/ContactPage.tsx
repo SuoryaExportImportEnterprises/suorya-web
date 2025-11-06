@@ -339,39 +339,85 @@ export function ContactPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    const emailAddresses = [
-      "alodhankhushi17@gmail.com",
-      "email2@example.com",
-      "email3@example.com",
-    ];
+  //   const emailAddresses = [
+  //     "alodhankhushi17@gmail.com",
+  //     "email2@example.com",
+  //     "email3@example.com",
+  //   ];
 
-    const subject = encodeURIComponent(`Suorya Contact Form - ${formData.inquiry}`);
+  //   const subject = encodeURIComponent(`Suorya Contact Form - ${formData.inquiry}`);
 
-    // compose full phone with dial code
-    const finalPhone = `${formData.dialCode ?? ""}${formData.phone ?? ""}`;
+  //   // compose full phone with dial code
+  //   const finalPhone = `${formData.dialCode ?? ""}${formData.phone ?? ""}`;
 
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nCompany: ${formData.company}\nDesignation: ${formData.designation}\nEmail: ${formData.email}\nPhone: ${finalPhone}\nInquiry Type: ${formData.inquiry}\n\nMessage:\n${formData.message}`
-    );
+  //   const body = encodeURIComponent(
+  //     `Name: ${formData.name}\nCompany: ${formData.company}\nDesignation: ${formData.designation}\nEmail: ${formData.email}\nPhone: ${finalPhone}\nInquiry Type: ${formData.inquiry}\n\nMessage:\n${formData.message}`
+  //   );
 
-    window.location.href = `mailto:${emailAddresses.join(",")}?subject=${subject}&body=${body}`;
+  //   window.location.href = `mailto:${emailAddresses.join(",")}?subject=${subject}&body=${body}`;
 
-    // Reset, keep default country/dial (or you can clear to blank)
-    setFormData({
-      name: "",
-      company: "",
-      designation: "",
-      email: "",
-      phone: "",
-      inquiry: "",
-      message: "",
-      countryIso: "in",
-      dialCode: "+91",
+  //   // Reset, keep default country/dial (or you can clear to blank)
+  //   setFormData({
+  //     name: "",
+  //     company: "",
+  //     designation: "",
+  //     email: "",
+  //     phone: "",
+  //     inquiry: "",
+  //     message: "",
+  //     countryIso: "in",
+  //     dialCode: "+91",
+  //   });
+  // };
+
+
+
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
-  };
+
+    const data = await res.json();
+
+    if (data.ok) {
+      alert("✅ Message sent successfully! We’ll get back to you soon.");
+      // Reset the form
+      setFormData({
+        name: "",
+        company: "",
+        designation: "",
+        email: "",
+        phone: "",
+        inquiry: "",
+        message: "",
+        countryIso: "in",
+        dialCode: "+91",
+      });
+    } else {
+      alert("⚠️ Failed to send message. Please try again.");
+    }
+  } catch (err) {
+    console.error("Error sending message:", err);
+    alert("❌ Something went wrong while sending your message.");
+  }
+};
+
+
+
+
+
 
   // Form section
   const FormSection = (
