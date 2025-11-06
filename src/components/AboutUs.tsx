@@ -30,7 +30,7 @@ export function AboutUs() {
           </div> */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center bg-stone-100">
   <img
-    src="/home/father-daughter.jpg"
+    src="/home/father-daughter-hd.jpeg"
     alt="Suorya Craftsmanship"
     className="w-full h-full object-contain rounded-2xl"
   />
@@ -50,17 +50,7 @@ export function AboutUs() {
               What drives us isn’t just the fabric or the finish - it’s the purpose stitched into every creation. Each 
               piece we make carries a part of our story: the patience of years spent perfecting the craft, the curiosity to
               explore new ideas, and the joy of seeing ideas come to life. 
-              {/* For us, quality is the reflection of who we are
-              - steady, evolving, and endlessly devoted to creating something that lasts. */}
             </p>
-
-            {/* <blockquote className="border-l-4 border-orange-600 pl-6 italic text-stone-700">
-              "With more than 30 years of experience working with top
-              international brands, we have followed the best export practices.
-              Our products meet international quality standards. We are SEDEX
-              certified. These certifications reflect our strong commitment
-              towards ethical and responsible practices."
-            </blockquote> */}
           </div>
         </div>
       </div>

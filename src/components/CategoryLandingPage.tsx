@@ -25,46 +25,28 @@ export function CategoryLandingPage({
 }: CategoryLandingPageProps) {
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Back Button */}
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <Button
-          variant="ghost"
-          onClick={onBack}
-          className="flex items-center gap-2 text-stone-700 hover:text-orange-600"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Home
-        </Button>
-      </div> */}
 
       {/* Cover Section - Reduced height */}
-      {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
+      <div className="relative h-[300px] md:h-[320px] w-full overflow-hidden mb-20">
         <ImageWithFallback
           src={coverImageUrl}
           alt={categoryName}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white space-y-4 px-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-wide">
+          <div className="text-center text-white space-y-4 px-4 drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-wide drop-shadow-xl">
               {categoryName}
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white drop-shadow-md">
               Explore our premium collection
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Subcategory Blocks */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        {/* <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl text-stone-800 mb-4">
-            Select a Category
-          </h2>
-          <div className="w-24 h-1 bg-orange-600 mx-auto"></div>
-        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {subcategories.map((subcategory, index) => (

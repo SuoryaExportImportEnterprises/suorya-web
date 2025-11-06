@@ -483,9 +483,6 @@ export function ContactPage() {
           placeholder="Enter phone number"
         />
       </div>
-      <p className="text-xs text-stone-500 mt-1">
-        We will call you at {formData.dialCode}{formData.phone || " — "}
-      </p>
     </div>
   </div>
 
