@@ -13,29 +13,29 @@ export function AboutUs() {
             A Father - Daughter Journey!
           </h2>
           <p className="text-stone-600 text-lg mt-2">
-    At the heart of the business is a passionate father - daughter duo, blending expertise in operations and design.
+          At the heart of the business is a passionate father - daughter duo, blending expertise in operations and design.
           </p>
         </div>
 
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          {/* <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
-            <img
+          {/* <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full"> */}
+            {/* <img
               src="/home/father-daughter.jpg"
               alt="Suorya Craftsmanship"
               className="w-full h-full object-cover aspect-[16/10]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent"></div>
-          </div> */}
+            /> */}
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent"></div> */}
+          {/* </div> */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center bg-stone-100">
-  <img
-    src="/home/father-daughter-hd.jpeg"
-    alt="Suorya Craftsmanship"
-    className="w-full h-full object-contain rounded-2xl"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent rounded-2xl"></div>
-</div>
+            <img
+              src="/home/father-daughter-hd.jpeg"
+              alt="Suorya Craftsmanship"
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent rounded-2xl"></div>
+          </div>
           {/* Story Content */}
           <div className="space-y-8">
             <p className="text-lg text-stone-600 leading-relaxed">
@@ -44,11 +44,11 @@ export function AboutUs() {
               nurtured a partnership rooted in trust, purposeful innovation, and a shared vision for future growth. From the 
               first sketch to the final stitch, our design and production teams stay closely 
               connected through the process, making sure every piece is crafted with care, detail, and the quality it deserves.
-              From the first sketch to the final stitch, our design and production teams work in sync to ensure every piece is
-              thoughtfully made with precision and consistent quality.
+              We balance heritage with innovation, pairing time-tested techniques with an eye for emerging styles, seasonal 
+              trends, and what today’s buyers truly seek - ensuring our collections remain relevant and retail-ready.
               <br></br>
-              What drives us isn’t just the fabric or the finish - it’s the purpose stitched into every creation. Each 
-              piece we make carries a part of our story: the patience of years spent perfecting the craft, the curiosity to
+              What drives us is a simple yet profound belief: to be a reliable, design-forward partner for our buyers. Each 
+              piece we create carries a part of our story: the patience of years spent perfecting the craft, the curiosity to
               explore new ideas, and the joy of seeing ideas come to life. 
             </p>
           </div>

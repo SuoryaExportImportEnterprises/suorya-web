@@ -189,7 +189,7 @@ const handleNavigate = (page: string) => {
 
     return (
       <div className="min-h-screen">
-        <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="category" />
+        <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage={currentPage.categoryKey} />
         <CategoryLandingPage
           categoryName={category.name}
           coverImageUrl={category.coverImageUrl}
@@ -210,7 +210,7 @@ const handleNavigate = (page: string) => {
     const category = categoryData["packaging"];
     return (
       <div className="min-h-screen">
-        <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage="category" />
+        <Navigation onNavigate={handleNavigate} onSearch={handleSearch} currentPage={currentPage.categoryKey} />
         <SpoolPage />
         <Footer onNavigate={handleNavigate} />
       </div>
@@ -288,8 +288,17 @@ const handleNavigate = (page: string) => {
           <StorylineSection
             title="Creativity & Collaboration"
             subtitle="Co-Creating Value, Season After Season"
-            description="At Suorya, creativity is a collaborative journey. Our design and production teams work hand-in-hand from concept to creation - brainstorming, sketching, sampling, and refining until the idea feels just right. We embrace diverse perspectives, encourage experimentation, and value the harmony that comes when people create together. Every season, we challenge ourselves to explore new materials, techniques, colours, and textures, ensuring each product is thoughtful, relevant, and beautifully crafted. It’s this blend of imagination, teamwork, and disciplined execution that shapes the collections our customers love."
-            imageUrl="/home/creative.png"
+            description="At Suorya, creativity is a collaborative journey.
+            Our design team anchors the process from concept to creation - brainstorming, 
+            sketching, sampling, and refining until the idea feels just right. 
+            Once the design is finalised, our production team brings it to life with
+            precision and consistency at scale.
+            We embrace diverse perspectives, encourage experimentation, and value the harmony 
+            that comes when people create together. Every season, we explore new materials, 
+            techniques, colours, and textures to ensure each product is thoughtful, relevant, 
+            and beautifully crafted. It’s this blend of imagination, teamwork, and disciplined 
+            execution that shapes the collections our customers love."
+            imageUrl="/home/heritage-1.jpg"
             imageAlt="Creative collaboration"
             reverse={true}
             bgColor="bg-stone-50"

@@ -58,29 +58,6 @@ export function StorylineSection({
               {description}
             </p>
 
-            <div className="pt-4">
-              <a
-                href="#products"
-                className="inline-flex items-center text-orange-600 hover:text-orange-700 transition-colors duration-300 group"
-              >
-                <span className="border-b-2 border-orange-600 group-hover:border-orange-700">
-                  Explore Our Collections
-                </span>
-                <svg
-                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </div>

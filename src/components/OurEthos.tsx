@@ -3,14 +3,14 @@ import { Truck, Users, Sparkles, BadgeCheck, BadgeDollarSign , Group } from "luc
 export default function OurEthos() {
   const items = [
     { key: "craft", label: "Premium Craftsmanship", Icon: Sparkles },
-    { key: "quality", label: "Focus on Quality", Icon: BadgeCheck },
+    { key: "quality", label: "Quality Assured", Icon: BadgeCheck },
     { key: "timely", label: "Timely Delivery", Icon: Truck },
     { key: "collab", label: "Design Collaboration", Icon: Group },
     { key: "trend", label: "Competitive Pricing", Icon: BadgeDollarSign },
   ];
 
   return (
-    <section aria-labelledby="ethos-heading" className="py-6 bg-white">
+    <section aria-labelledby="ethos-heading" className="py-6 mb-12 mt-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-4">
           <p className="text-orange-600 tracking-widest uppercase text-sm">
@@ -18,7 +18,7 @@ export default function OurEthos() {
           </p>
           <h2
             id="ethos-heading"
-            className="text-2xl md:text-3xl font-semibold text-stone-800"
+            className="text-4xl md:text-5xl font-semibold text-stone-800"
           >
             What We Deliver
           </h2>
@@ -38,7 +38,7 @@ export default function OurEthos() {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-stone-200 flex items-center justify-center mb-2 md:mb-3">
                   <it.Icon className="w-5 h-5 md:w-6 md:h-6 text-orange-600" />
                 </div>
-                <div className="text-stone-900 font-medium text-sm md:text-base text-center">
+                <div className="text-stone-600 font-medium text-lg md:text-base text-center">
                   {it.label}
                 </div>
               </div>
