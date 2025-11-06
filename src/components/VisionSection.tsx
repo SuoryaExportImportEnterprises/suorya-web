@@ -71,135 +71,113 @@
 
 
 
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+
+
+
+
+
+
+import React from "react";
 
 export function VisionSection() {
-  // if you add / change image filenames later, just update this array (max 5)
-  const collageImages = [
+  const images = [
     "/home/designstudio1.jpg",
     "/home/designstudio2.jpg",
     "/home/designstudio3.jpg",
-    "/home/designstudio4.jpg",
-    "/home/designstudio5.jpg",
   ];
 
   return (
-    <section className="py-16 bg-stone-800 mb-20 text-white">
+    <section className="py-16 mb-20 bg-white text-stone-800 relative">
+      {/* Hover Style (same as Spool Page) */}
+      <style>{`
+        .spool-image-container {
+          transition: all 0.4s ease;
+          border-radius: 1rem;
+          overflow: hidden;
+          background: white;
+        }
+        .spool-image-container:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 25px 30px -10px rgba(0, 0, 0, 0.15),
+                      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .spool-image {
+          transition: transform 0.5s ease;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .spool-image-container:hover .spool-image {
+          transform: scale(1.05);
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-8 space-y-4">
-          <p className="text-orange-400 tracking-widest uppercase text-sm">
+        <div className="text-center mb-10 space-y-4">
+          <p className="text-orange-600 tracking-widest uppercase text-sm">
             Our Craft
           </p>
-          <h2 className="text-4xl md:text-5xl">Vision & Expertise</h2>
-          <p className="text-xl text-stone-300 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-semibold">
+            Vision & Expertise
+          </h2>
+          <p className="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
             Step into our design studio where innovation meets artistry. Every
             piece we create is a testament to our commitment to excellence.
           </p>
         </div>
 
-        {/* Collage / Designer Photos Grid (responsive) */}
-        <div className="max-w-6xl mx-auto mb-12">
-          <div className="grid gap-4 sm:gap-6">
-            {/* Responsive collage:
-                - small screens: stacked single column
-                - md+ screens: grid with one large tile + 4 smaller tiles
-            */}
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2">
-              {/* Large hero tile (spans 2 cols, 2 rows on md+) */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl md:col-span-2 md:row-span-2">
-                <ImageWithFallback
-                  src={collageImages[0]}
-                  alt="Designer at work"
-                  className="w-full h-full object-cover aspect-[16/10]"
-                  onError={(e: any) => {
-                    e.currentTarget.src =
-                      "https://placehold.co/1080x675/111827/fff?text=Image+1";
-                    e.currentTarget.style.backgroundColor = "#111827";
-                  }}
-                />
-              </div>
-
-              {/* Small tiles — arranged in the remaining columns */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <ImageWithFallback
-                  src={collageImages[1]}
-                  alt="Craftsmanship detail"
-                  className="w-full h-full object-cover aspect-[16/10]"
-                  onError={(e: any) => {
-                    e.currentTarget.src =
-                      "https://placehold.co/1080x675/111827/fff?text=Image+2";
-                    e.currentTarget.style.backgroundColor = "#111827";
-                  }}
-                />
-              </div>
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <ImageWithFallback
-                  src={collageImages[2]}
-                  alt="Studio detail"
-                  className="w-full h-full object-cover aspect-[16/10]"
-                  onError={(e: any) => {
-                    e.currentTarget.src =
-                      "https://placehold.co/1080x675/111827/fff?text=Image+3";
-                    e.currentTarget.style.backgroundColor = "#111827";
-                  }}
-                />
-              </div>
-
-              {/* On md+: these two appear beneath the previous two, filling the grid */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <ImageWithFallback
-                  src={collageImages[3]}
-                  alt="Design sample"
-                  className="w-full h-full object-cover aspect-[16/10]"
-                  onError={(e: any) => {
-                    e.currentTarget.src =
-                      "https://placehold.co/1080x675/111827/fff?text=Image+4";
-                    e.currentTarget.style.backgroundColor = "#111827";
-                  }}
-                />
-              </div>
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <ImageWithFallback
-                  src={collageImages[4]}
-                  alt="Studio materials"
-                  className="w-full h-full object-cover aspect-[16/10]"
-                  onError={(e: any) => {
-                    e.currentTarget.src =
-                      "https://placehold.co/1080x675/111827/fff?text=Image+5";
-                    e.currentTarget.style.backgroundColor = "#111827";
-                  }}
-                />
-              </div>
+        {/* Image Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+          {images.map((src, i) => (
+            <div key={i} className="spool-image-container">
+              <img
+                src={src}
+                alt={`Design Studio ${i + 1}`}
+                className="spool-image aspect-square"
+              />
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Editorial Content (unchanged) */}
-        <div className="grid md:grid-cols-3 gap-8 mt-8">
-          <div className="space-y-3">
-            <h3 className="text-2xl text-orange-400">Meticulous Selection</h3>
-            <p className="text-stone-300 leading-relaxed">
-              We proudly train and work alongside women artisans who are highly skilled in stitching and thread work. Each ribbon spool is wrapped on a hand operated spinning wheel.
-            </p>
-          </div>
+        {/* Info Boxes */}
+        <div className="w-full mt-12">
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+            {/* Artisan Techniques */}
+            <div
+              className="flex-1 flex flex-col items-center justify-center py-10 px-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 text-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(255,118,0,0.06) 0%, rgba(255,255,255,0.0) 50%, rgba(255,118,0,0.06) 100%)",
+              }}
+            >
+              <h3 className="text-2xl font-semibold text-orange-600 mb-4">
+                Artisan Techniques
+              </h3>
+              <p className="text-stone-600 text-lg leading-relaxed max-w-md">
+                Our design team is passionate and experienced, crafting unique
+                creations that bring life to every season — from ribbons and bows
+                to garlands and tree toppers.
+              </p>
+            </div>
 
-          <div className="space-y-3">
-            <h3 className="text-2xl text-orange-400">Artisan Techniques</h3>
-            <p className="text-stone-300 leading-relaxed">
-              Our design team is passionate and experienced, creating unique products for each season - be it bows, tree toppers, tree skirts or garlands.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h3 className="text-2xl text-orange-400">Design Innovation</h3>
-            <p className="text-stone-300 leading-relaxed">
-              We stay ahead of trends while creating timeless pieces. Each
-              season brings fresh designs that inspire decorators, designers,
-              and gift enthusiasts alike.
-            </p>
+            {/* Design Innovation */}
+            <div
+              className="flex-1 flex flex-col items-center justify-center py-10 px-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 text-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(255,118,0,0.06) 0%, rgba(255,255,255,0.0) 50%, rgba(255,118,0,0.06) 100%)",
+              }}
+            >
+              <h3 className="text-2xl font-semibold text-orange-600 mb-4">
+                Design Innovation
+              </h3>
+              <p className="text-stone-600 text-lg leading-relaxed max-w-md">
+                We combine creativity with modern design trends to produce
+                timeless pieces that inspire decorators, designers, and gift
+                enthusiasts alike.
+              </p>
+            </div>
           </div>
         </div>
       </div>
