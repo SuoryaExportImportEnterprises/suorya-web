@@ -22,10 +22,7 @@ export function Footer({ onNavigate }: FooterProps) {
             >
               Suorya
             </button>
-            <p className="text-sm leading-relaxed">
-              Crafting premium ribbons and décor with excellence for over two
-              decades.
-            </p>
+            <p></p>
           </div>
 
           {/* Quick Links */}
@@ -46,6 +43,14 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="hover:text-orange-400 transition-colors duration-300 text-left"
                 >
                   Products
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavigate("design-studio")}
+                  className="hover:text-orange-400 transition-colors duration-300 text-left"
+                >
+                  Design Studio
                 </button>
               </li>
               <li>
@@ -79,28 +84,21 @@ export function Footer({ onNavigate }: FooterProps) {
                   Trims
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
                   onClick={() => handleNavigate("bows")}
                   className="hover:text-orange-400 transition-colors duration-300 text-left"
                 >
                   Bows
                 </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigate("tree-skirts")}
-                  className="hover:text-orange-400 transition-colors duration-300 text-left"
-                >
-                  Tree Skirts
-                </button>
-              </li>
+              </li> */}
+              
               <li>
                 <button
                   onClick={() => handleNavigate("spool")}
                   className="hover:text-orange-400 transition-colors duration-300 text-left"
                 >
-                  Spool
+                  Packaging
                 </button>
               </li>
             </ul>
@@ -115,7 +113,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <p>
                   D139, D Block, Sector 63, Noida,
                   <br />
-                  Hazratpur Wajidpur, Uttar Pradesh 201309
+                  Uttar Pradesh - 201301
                 </p>
               </div>
 
@@ -175,3 +173,4 @@ export function Footer({ onNavigate }: FooterProps) {
     </footer>
   );
 }
+

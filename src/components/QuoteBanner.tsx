@@ -7,7 +7,7 @@ export function QuoteBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-orange-100 rounded-2xl shadow-sm p-8 md:p-10 text-center">
           {/* Main Quote */}
-          <p className="text-lg font-normal leading-relaxed text-stone-600 mx-auto max-w-4xl">
+          <p className="text-lg font-normal mb-0 leading-relaxed text-stone-600 mx-auto max-w-4xl">
             "With more than 30 years of experience working with international
             brands, we follow export best practices and meet global quality
             standards. We are{" "}
