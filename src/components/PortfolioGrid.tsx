@@ -1,3 +1,5 @@
+// ..................................Image rotator - only auto rotate...................................
+
 // import React, { useState, useEffect, useRef } from "react";
 // import { motion } from "framer-motion";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -180,7 +182,7 @@
 
 
 
-
+//............................Image rotator - Only Auto Rotate + Clickable also...............................
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
@@ -347,4 +349,3 @@ export function PortfolioGrid() {
     </section>
   );
 }
-

@@ -62,20 +62,7 @@ const categoryData = {
   //     { name: "VELVET BOW", description: "Timeless velvet sophistication, reinvented.", imageUrl: "/cover-images/bows/velvet.jpg" },
   //   ],
   // },
-
-  // "garlands": {
-  //   type: "complex" as const,
-  //   name: "Tree Skirts",
-  //   coverImageUrl: "/cover-images/treeskirtscover.jpeg",
-  //   subcategories: [
-  //     { name: "", description: "", imageUrl: "/cover-images/treeskirts/skirt1.jpg" },
-  //     { name: "", description: "", imageUrl: "/cover-images/treeskirts/skirt2.jpg" },
-  //     { name: "", description: "", imageUrl: "/cover-images/treeskirts/skirt3.jpg" },
-  //     { name: "", description: "", imageUrl: "/cover-images/treeskirts/skirt4.jpg" },
-  //     { name: "", description: "", imageUrl: "/cover-images/treeskirts/skirt5.jpg" },
-  //   ],
-  // },
-
+  
   packaging: {
     type: "simple" as const,
     name: "Packaging",
