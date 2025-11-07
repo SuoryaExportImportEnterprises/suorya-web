@@ -199,10 +199,9 @@ export function SpoolPage() {
         }
         
         .header-title {
-        font-family: serif;
-        color: #ea580c;
         margin-bottom: 1rem;
-        font-size: 2rem;
+        font-size: 3rem;
+        color: #292524;
         font-weight: 400;
         line-height: 1.5;
         }
@@ -268,7 +267,10 @@ export function SpoolPage() {
         <div className="main-wrapper">
           {/* Category Page Header */}
           <div className="header-section">
-            <div className="header-line"></div>
+            {/* <div className="header-line"></div> */}
+            <p className="text-orange-600 tracking-widest uppercase text-sm">
+            Strong. Steady. Sustainable.
+          </p>
             
             <h1 className="header-title">
               Spool Collection
