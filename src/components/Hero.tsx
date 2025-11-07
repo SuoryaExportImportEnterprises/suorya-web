@@ -12,27 +12,31 @@ export function Hero() {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent"></div>
+        
       </div>
 
       {/* Content */}
-      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px- flex items-center">
         <div className="max-w-2xl space-y-6">
-          <div className="space-y-2">
+          <div className="space-y-4">
             <p className="text-orange-600 tracking-widest uppercase text-sm">
               Premium Ribbons & Décor
             </p>
-            <h1 className="md:text-4xl lg:text-7xl text-stone-800 leading-tight font-[Adamina] text-[42px] md:text-[48px] lg:text-[64px] text-left">
-              <span className="block whitespace-nowrap">
-                Crafting pieces that
-              </span>
-              <span className="block">
-                 feel forever in style.
-              </span>
+            <h1
+            className="text-stone-800 leading-tight text-left" 
+            style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }} 
+            >
+              <span className="block">Crafting pieces that</span>
+              <span className="block">feel forever in style.</span>
             </h1>
+
+
           </div>
 
-          <p className="text-lg md:text-xl text-black-600 leading-relaxed max-w-xl">
-            Where premium craftsmanship meets chic design. Celebrating over two
+          <p className="text-lg md:text-xl font-medium text-stone-800 leading-relaxed max-w-xl">
+            Where premium craftsmanship meets chic design. 
+            <br />
+            Celebrating over two
             decades of expertise in creating ribbons, trims, and décor that
             transform ordinary moments into extraordinary memories.
           </p>
@@ -50,6 +54,7 @@ export function Hero() {
 
       {/* Decorative Element */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+      
     </section>
   );
 }

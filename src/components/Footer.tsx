@@ -95,7 +95,7 @@ export function Footer({ onNavigate }: FooterProps) {
               
               <li>
                 <button
-                  onClick={() => handleNavigate("spool")}
+                  onClick={() => handleNavigate("packaging")}
                   className="hover:text-orange-400 transition-colors duration-300 text-left"
                 >
                   Packaging

@@ -1,0 +1,36 @@
+.ethos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.ethos-grid > *:nth-child(5) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+@media (min-width: 640px) {
+  .ethos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ethos-grid > *:nth-child(5) {
+    grid-column: auto;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ethos-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .ethos-grid > *:nth-child(5) {
+    grid-column: auto;
+    justify-self: auto;
+  }
+}
+
+.ethos-card {
+  width: 100%;
+  max-width: 280px;
+}
