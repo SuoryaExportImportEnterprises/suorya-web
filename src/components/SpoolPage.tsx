@@ -80,11 +80,11 @@ function SpoolCard({ title, description, imageUrl, index }: SpoolCardProps) {
         }}></div>
         
         <h2 style={{ 
-          fontFamily: "serif", 
+          // fontFamily: "serif", 
           color: "#ea580c", 
           marginBottom: '0.5rem',
           fontSize: '1.5rem',
-          fontWeight: 500,
+          // fontWeight: 500,
           lineHeight: 1.5
         }}>
           {title}
@@ -247,7 +247,6 @@ export function SpoolPage() {
         }
         
         .footer-text {
-          font-family: 'Playfair Display', serif;
           color: #9ca3af;
           font-style: italic;
           letter-spacing: 0.025em;

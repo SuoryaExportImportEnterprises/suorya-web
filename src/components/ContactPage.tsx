@@ -300,6 +300,9 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import countries from "country-telephone-data";
+import toast, { Toaster } from "react-hot-toast";
+
+
 
 interface FormData {
   name: string;
@@ -392,7 +395,7 @@ export function ContactPage() {
     const data = await res.json();
 
     if (data.ok) {
-      alert("✅ Message sent successfully! We’ll get back to you soon.");
+      toast.success("Message sent successfully! We’ll get back to you soon.");
       // Reset the form
       setFormData({
         name: "",
@@ -406,11 +409,11 @@ export function ContactPage() {
         dialCode: "+91",
       });
     } else {
-      alert("⚠️ Failed to send message. Please try again.");
+      toast.error("Failed to send message. Please try again.");
     }
   } catch (err) {
     console.error("Error sending message:", err);
-    alert("❌ Something went wrong while sending your message.");
+    toast.error("Something went wrong while sending your message. 😞");
   }
 };
 
@@ -683,6 +686,42 @@ export function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
+      <Toaster
+      position="top-right"
+      toastOptions={{
+        success: {
+          style: {
+            background: "#f97316", // Suorya orange
+            color: "white",
+            fontWeight: "500",
+          },
+          iconTheme: {
+            primary: "white",
+            secondary: "#f97316",
+          },
+        },
+        error: {
+      style: {
+        background: "#1a1c24", // elegant dark tone
+        color: "white",
+        fontWeight: "500",
+      },
+      iconTheme: {
+        primary: "white",
+        secondary: "#1a1c24",
+      },
+    },
+    loading: {
+      style: {
+        background: "#111827",
+        color: "white",
+        fontWeight: "500",
+      },
+    },
+  }}
+/>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-16 space-y-4">
           <p className="text-orange-600 tracking-widest uppercase text-sm">
