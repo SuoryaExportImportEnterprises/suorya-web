@@ -163,7 +163,7 @@ export function VisionSection() {
 
             {/* Design Innovation */}
             <div
-              className="flex-1 flex flex-col items-center justify-center py-10 px-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 text-center"
+              className="flex-1 flex flex-col items-center justify-center py-12 px-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 text-center"
               style={{
                 background:
                   "linear-gradient(90deg, rgba(255,118,0,0.06) 0%, rgba(255,255,255,0.0) 50%, rgba(255,118,0,0.06) 100%)",

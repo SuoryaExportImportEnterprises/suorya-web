@@ -22,28 +22,12 @@ export function StorylineSection({
   return (
     <section className={`py-16 ${bgColor}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className={`grid lg:grid-cols-2 gap-12 items-center ${
-            reverse ? "lg:grid-flow-dense" : ""
-          }`}
-        >
-          {/* Image */}
-          <div
-            className={`relative h-[500px] rounded-2xl overflow-hidden shadow-xl ${
-              reverse ? "lg:col-start-2" : ""
-            }`}
-          >
-            <ImageWithFallback
-              src={imageUrl}
-              alt={imageAlt}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-transparent"></div>
-          </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div
-            className={`space-y-6 ${reverse ? "lg:col-start-1 lg:row-start-1" : ""}`}
+            className={`space-y-6 order-1 lg:order-none ${
+              reverse ? "lg:col-start-1 lg:row-start-1" : ""
+            }`}
           >
             <div className="space-y-3">
               <p className="text-orange-600 tracking-widest uppercase text-sm">
@@ -57,7 +41,20 @@ export function StorylineSection({
             <p className="text-lg text-stone-600 leading-relaxed">
               {description}
             </p>
+          </div>
 
+          {/* Image */}
+          <div
+            className={`relative h-[500px] rounded-2xl overflow-hidden shadow-xl order-2 lg:order-none ${
+              reverse ? "lg:col-start-2" : ""
+            }`}
+          >
+            <ImageWithFallback
+              src={imageUrl}
+              alt={imageAlt}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-transparent"></div>
           </div>
         </div>
       </div>
