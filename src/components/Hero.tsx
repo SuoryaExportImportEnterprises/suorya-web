@@ -27,7 +27,7 @@ export function Hero() {
             style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }} 
             >
               <span className="block">Crafting Pieces That</span>
-              <span className="block">Feel Forever in Style.</span>
+              <span className="block">Feel Forever in Style</span>
             </h1>
 
 
