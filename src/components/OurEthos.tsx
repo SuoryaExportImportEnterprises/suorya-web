@@ -21,7 +21,7 @@ export default function OurEthos() {
   return (
     <section
       aria-labelledby="ethos-heading"
-      className="py-12 mb-12 mt-16 bg-white w-full overflow-hidden"
+      className="py-12 bg-white w-full overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
