@@ -269,7 +269,7 @@ export function SpoolPage() {
           <div className="header-section">
             {/* <div className="header-line"></div> */}
             <p className="text-orange-600 tracking-widest uppercase text-sm">
-            Strong, Steady, Sustainable.
+            Strong, Steady, Sustainable
           </p>
             
             <h1 className="header-title">
