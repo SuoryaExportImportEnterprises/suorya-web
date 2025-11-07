@@ -51,8 +51,8 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: 'Suorya <info@suorya.co.in>',
       to: [
-        // 'sanjay@suorya.com',
-        // 'aarushi.mittal@suorya.com',
+        'sanjay@suorya.com',
+        'aarushi.mittal@suorya.com',
         'info@suorya.co.in',
       ],
       reply_to: email, // allows you to directly reply to the visitor
