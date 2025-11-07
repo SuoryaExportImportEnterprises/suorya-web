@@ -26,8 +26,8 @@ export function Hero() {
             className="text-stone-800 leading-tight text-left" 
             style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }} 
             >
-              <span className="block">Crafting pieces that</span>
-              <span className="block">feel forever in style.</span>
+              <span className="block">Crafting Pieces That</span>
+              <span className="block">Feel Forever in Style.</span>
             </h1>
 
 
