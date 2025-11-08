@@ -264,6 +264,8 @@ if (!validatePhone(formData.phone, formData.dialCode)) {
             type="email"
             id="email"
             required
+            pattern="^(?=.{1,254}$)(?=.{1,64}@)[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+            title="Please enter a valid email like name@example.com"
             value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })

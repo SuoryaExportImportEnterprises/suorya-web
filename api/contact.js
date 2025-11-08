@@ -2,6 +2,15 @@
 import { Resend } from 'resend';
 import countries from "country-telephone-data";
 
+// RFC5322-lite, practical and strict enough for production
+const EMAIL_RE = /^(?=.{1,254}$)(?=.{1,64}@)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+function isValidEmail(email = "") {
+  const e = String(email).trim();
+  return EMAIL_RE.test(e);
+}
+
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -37,10 +46,17 @@ try {
 }
 
 
-    // Basic validation
-    if (!name || !email || !message) {
-      return res.status(400).json({ ok: false, error: 'Missing required fields' });
-    }
+// Basic validation
+if (!name || !email || !message) {
+  return res.status(400).json({ ok: false, error: 'Missing required fields' });
+}
+
+// Email format check
+const emailNormalized = String(email).trim();
+if (!isValidEmail(emailNormalized)) {
+  return res.status(400).json({ ok: false, error: 'Invalid email address format' });
+}
+
 
     const fullPhone = `${dialCode ?? ''}${phone ?? ''}`;
 
@@ -53,7 +69,7 @@ try {
           <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
           <tr><td><strong>Company</strong></td><td>${escapeHtml(company)}</td></tr>
           <tr><td><strong>Designation</strong></td><td>${escapeHtml(designation)}</td></tr>
-          <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
+          <tr><td><strong>Email</strong></td><td>${escapeHtml(emailNormalized)}</td></tr>
           <tr><td><strong>Phone</strong></td><td>${escapeHtml(fullPhone)}</td></tr>
           <tr><td><strong>Inquiry Type</strong></td><td>${escapeHtml(inquiry)}</td></tr>
           <tr><td><strong>Country</strong></td><td>${escapeHtml(countryName || (countryIso?.toUpperCase() ?? ''))}</td></tr>
@@ -71,7 +87,7 @@ try {
         'aarushi.mittal@suorya.com',
         'info@suorya.co.in',
       ],
-      reply_to: email, // allows you to directly reply to the visitor
+      reply_to: emailNormalized, // allows you to directly reply to the visitor
       subject: `New Contact Form Submission: ${inquiry || 'General Inquiry'}`,
       html,
     });
