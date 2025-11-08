@@ -5,7 +5,8 @@ import toast, { Toaster } from "react-hot-toast";
 import PhoneInput from "react-phone-input-2";
 //@ts-ignore
 import "react-phone-input-2/lib/style.css";
-import { parsePhoneNumberFromString } from "libphonenumber-js";
+// import { parsePhoneNumberFromString } from "libphonenumber-js";
+import { parsePhoneNumberFromString } from "libphonenumber-js/max";
 
 
 interface FormData {
