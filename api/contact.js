@@ -1,5 +1,7 @@
 // api/contact.js
 import { Resend } from 'resend';
+import countries from "country-telephone-data";
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -21,6 +23,20 @@ export default async function handler(req, res) {
       dialCode,
     } = req.body || {};
 
+    // Get readable country name from ISO code
+let countryName = "";
+try {
+  const found = (countries.allCountries || []).find(
+    (c) => c.iso2.toLowerCase() === (countryIso || "").toLowerCase()
+  );
+  if (found) {
+    countryName = `${found.name} (${countryIso?.toUpperCase() || ""})`;
+  }
+} catch (e) {
+  console.error("Country lookup failed:", e);
+}
+
+
     // Basic validation
     if (!name || !email || !message) {
       return res.status(400).json({ ok: false, error: 'Missing required fields' });
@@ -40,7 +56,7 @@ export default async function handler(req, res) {
           <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
           <tr><td><strong>Phone</strong></td><td>${escapeHtml(fullPhone)}</td></tr>
           <tr><td><strong>Inquiry Type</strong></td><td>${escapeHtml(inquiry)}</td></tr>
-          <tr><td><strong>Country</strong></td><td>${escapeHtml(countryIso?.toUpperCase() ?? '')}</td></tr>
+          <tr><td><strong>Country</strong></td><td>${escapeHtml(countryName || (countryIso?.toUpperCase() ?? ''))}</td></tr>
           <tr><td><strong>Message</strong></td><td>${nl2br(escapeHtml(message))}</td></tr>
         </table>
         <p style="font-size: 12px; color: #888;">Sent automatically from suorya.co.in</p>
