@@ -23,17 +23,6 @@ export function SimpleCategoryPage({
 }: SimpleCategoryPageProps) {
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Back Button */}
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <Button
-          variant="ghost"
-          onClick={onBack}
-          className="flex items-center gap-2 text-stone-700 hover:text-orange-600"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Home
-        </Button>
-      </div> */}
 
       {/* Cover Section - Reduced height */}
       {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">

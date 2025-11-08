@@ -28,7 +28,7 @@ const categoryData = {
       { name: "EMBROIDERED", description: "Decorative ribbon featuring fine embroidered thread detailing.", imageUrl: "/cover-images/ribbon-cover/sequin cover.png" },
       { name: "JACQUARD RIBBON", description: "Woven jacquard ribbon featuring intricate, textured patterns.", imageUrl: "/cover-images/ribbon-cover/jacquardcover.png" },
       { name: "JUTE", description: "Natural jute ribbon providing rustic, textured appeal.", imageUrl: "/cover-images/ribbon-cover/cover_jute.jpg" },
-      { name: "ABSTRACT POLY", description: "Polyester ribbon with bold abstract woven designs.", imageUrl: "/products/ribbon/abstract_poly.png" },
+      { name: "ABSTRACT POLY", description: "Polyester ribbon with bold abstract woven designs.", imageUrl: "/products/ribbon/abstract_poly_red.png" },
       { name: "PRINTED RIBBON", description: "Printed ribbon featuring vibrant, high-definition patterns.", imageUrl: "/cover-images/ribbon-cover/cover_ongrossgrain.png" },
     ],
   },
@@ -36,7 +36,7 @@ const categoryData = {
   trims: {
     type: "complex" as const,
     name: "Trims",
-    coverImageUrl: "/products/trims/fringes&tassels.png",
+    coverImageUrl: "/cover-images/ric-rac-cover.png",
     subcategories: [
       { name: "BUNTING", description: "Decorative trim for event, party, and seasonal décor.", imageUrl: "/cover-images/buntingcover.png" },
       { name: "RIC RAC", description: "Zigzag ric rac trims for fashion, packaging, and crafts.", imageUrl: "/cover-images/ric-rac-cover.png" },
@@ -48,20 +48,6 @@ const categoryData = {
       { name: "LACES", description: "Fine lace detailing for apparel, packaging, and accessories.", imageUrl: "/products/trims/laces.png" },
     ],
   },
-
-  // bows: {
-  //   type: "complex" as const,
-  //   name: "Bows",
-  //   coverImageUrl: "/cover-images/bow-coverimage.webp",
-  //   subcategories: [
-  //     { name: "JUMBO BOW", description: "Grand statements for bold celebrations.", imageUrl: "/cover-images/bows/jumbo.jpg" },
-  //     { name: "SATIN BOW", description: "Soft satin bows - understated yet captivating.", imageUrl: "/cover-images/satin-bow-cover.png" },
-  //     { name: "SHEER BOW", description: "Light and airy bows for subtle charm.", imageUrl: "/cover-images/bows/sheer.jpg" },
-  //     { name: "WIRED VELVET BOW", description: "Velvet elegance shaped to perfection.", imageUrl: "/cover-images/bows/wiredvelvet.jpg" },
-  //     { name: "WINE CHARMS", description: "Whimsical accents for festive gatherings.", imageUrl: "/cover-images/bows/winecharms.jpg" },
-  //     { name: "VELVET BOW", description: "Timeless velvet sophistication, reinvented.", imageUrl: "/cover-images/bows/velvet.jpg" },
-  //   ],
-  // },
   
   packaging: {
     type: "simple" as const,

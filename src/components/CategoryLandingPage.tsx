@@ -1,6 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+//@ts-ignore
+import "./CategoryLandingPage.css"; // ✅ Import the CSS file
 
 interface Subcategory {
   name: string;
@@ -25,29 +27,30 @@ export function CategoryLandingPage({
 }: CategoryLandingPageProps) {
   return (
     <div className="min-h-screen bg-white pt-20">
-
-      {/* Cover Section - Reduced height */}
+      
+      {/* 🌤️ Softer overlay for elegance */}
       <div className="relative h-[300px] md:h-[320px] w-full overflow-hidden mb-20">
         <ImageWithFallback
           src={coverImageUrl}
           alt={categoryName}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-100"
         />
+
+        {/* ✅ Light gradient overlay (not full black) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent"></div>
+
+
+        {/* Text Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white space-y-4 px-4 drop-shadow-lg">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-wide drop-shadow-xl">
-              {categoryName}
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white drop-shadow-md">
-              Explore our premium collection
-            </p>
+          <div className="text-center text-white space-y-4 px-4">
+            <h1 className="category-title">{categoryName}</h1>
+            <p className="category-subtitle">Explore our premium collection</p>
           </div>
         </div>
       </div>
 
-      {/* Subcategory Blocks */}
+      {/* Subcategory Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {subcategories.map((subcategory, index) => (
             <button
@@ -55,9 +58,7 @@ export function CategoryLandingPage({
               onClick={() => onSubcategoryClick(subcategory.name)}
               className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-left"
             >
-              {/* <div className="aspect-[4/3] overflow-hidden bg-stone-100"> */}
               <div className="aspect-[4/3] overflow-hidden bg-stone-100 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-2xl">
-
                 <ImageWithFallback
                   src={subcategory.imageUrl}
                   alt={subcategory.name}
