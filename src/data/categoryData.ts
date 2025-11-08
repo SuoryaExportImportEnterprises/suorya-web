@@ -41,7 +41,7 @@ const categoryData = {
       { name: "BUNTING", description: "Decorative trim for event, party, and seasonal décor.", imageUrl: "/cover-images/buntingcover.png" },
       { name: "RIC RAC", description: "Zigzag ric rac trims for fashion, packaging, and crafts.", imageUrl: "/cover-images/ric-rac-cover.png" },
       { name: "BRAIDS", description: "Woven braid trims for garments, upholstery, and craft decoration.", imageUrl: "/cover-images/ribbon-cover/braided cover.png" },
-      { name: "POMS", description: "Pom trims for creative packaging, home décor, and DIY crafts.", imageUrl: "/products/trims/poms.png" },
+      { name: "POMS", description: "Pom trims for creative packaging, home décor, and DIY crafts.", imageUrl: "/products/trims/poms_bright.png" },
       { name: "CORDS", description: "Versatile cords for tying, wrapping, and decorative use.", imageUrl: "/cover-images/cord cover.png" },
       { name: "RUFFLED & PLEATED", description: "Textured trims with soft ruffles and structured pleats.", imageUrl: "/products/trims/pleated&ruffled.png" },
       { name: "FRINGES & TASSELS", description: "Decorative trims featuring layered tassels and flowing fringe movement.", imageUrl: "/products/trims/fringes&tassels.png" },

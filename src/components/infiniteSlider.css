@@ -36,8 +36,3 @@
     transform: translateX(-50%);
   }
 }
-
-/* Optional pause on hover */
-.slider-track:hover {
-  animation-play-state: paused;
-}
