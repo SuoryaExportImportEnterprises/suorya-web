@@ -515,10 +515,10 @@ export function PortfolioGrid() {
   const images = [
     "/images/gifting.jpg",
     "/images/satin-bow-garland.JPG",
-    "/images/bouquet.png",
+    "/images/bouquet.jpg",
     "/images/bow_blue.png",
     "/images/satin-bow-cover.png",
-    "/images/long_bow.png",
+    "/images/long_bow.JPG",
     "/images/red_bow.png",
   ];
 

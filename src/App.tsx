@@ -298,7 +298,7 @@ const handleNavigate = (page: string) => {
             techniques, colours, and textures to ensure each product is thoughtful, relevant, 
             and beautifully crafted. It’s this blend of imagination and teamwork that shapes 
             the collections our customers love."
-            imageUrl="/home/heritage-1.jpg"
+            imageUrl="/home/creative.png"
             imageAlt="Creative collaboration"
             reverse={true}
             bgColor="bg-stone-50"
@@ -338,7 +338,7 @@ const handleNavigate = (page: string) => {
 
     <Route path="/:category" element={<CategoryPage />} />
 
-    <Route
+    {/* <Route
   path="/design-studio"
   element={
     <div className="min-h-screen">
@@ -351,7 +351,7 @@ const handleNavigate = (page: string) => {
       <Footer onNavigate={handleNavigate} />
     </div>
   }
-/>
+/> */}
 
   </Routes>
 );

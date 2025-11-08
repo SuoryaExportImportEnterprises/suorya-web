@@ -396,7 +396,6 @@ const navigationItems = [
   "Home",
   "Ribbons",
   "Trims",
-  "Design Studio",
   "Packaging",
 ];
 
@@ -559,7 +558,7 @@ export function Navigation({
                 setIsOpen(false);
                 onNavigate("contact");
               }}
-              className={`block w-full text-left py-2 text-stone-700 hover:text-orange-600 ${
+              className={`block w-full text-left py-2 text-orange-600 hover:text-orange-600 ${
                 currentPage === "contact"
                   ? "text-orange-600 border-l-2 border-orange-600 pl-2"
                   : ""
