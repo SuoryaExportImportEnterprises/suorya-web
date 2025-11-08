@@ -1,4 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin } from "lucide-react";
+
 interface FooterProps {
   onNavigate: (page: string) => void;
 }
@@ -22,7 +24,17 @@ export function Footer({ onNavigate }: FooterProps) {
             >
               Suorya
             </button>
-            <p></p>
+            
+            <div>
+    <a
+      href="https://www.linkedin.com/company/suorya-export-import-enterprise/"  // 🔗 Replace with your actual LinkedIn URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-stone-800 hover:bg-orange-500 transition-colors duration-300"
+    >
+      <Linkedin className="w-4 h-4 text-stone-300 hover:text-white" />
+    </a>
+  </div>
           </div>
 
           {/* Quick Links */}
