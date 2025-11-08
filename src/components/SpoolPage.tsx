@@ -118,13 +118,13 @@ function SpoolCard({ title, description, imageUrl, index }: SpoolCardProps) {
 export function SpoolPage() {
   const spools = [
     {
-      title: "The Wooden Spool",
-      description: "Our wooden spools crafted with fine-grained wood carry the charm of craftsmanship. Each one holds our creations with care, giving every ribbon and trim a touch of tradition and timeless grace.",
+      title: "Wooden Spool",
+      description: "Our wooden spools are handcrafted with fine-grained wood carrying the charm of craftsmanship. Each one holds our creations with care, giving every ribbon and trim a touch of grace.",
       imageUrl: "/products/spools/woodenspool-2.png"
     },
     {
-      title: "The Paper Spool",
-      description: "Our paper spools speak a softer, modern language. Light and sustainable, they cradle our products with thoughtfulness where mindful making meets the art of adornment.",
+      title: "Paper Spool",
+      description: "Our paper spools reflect a softer, contemporary sensibility — crafted to hold each ribbon with quiet care and intention.",
       imageUrl: "/products/spools/paperspool-2.jpg"
     }
   ];
@@ -267,16 +267,19 @@ export function SpoolPage() {
           {/* Category Page Header */}
           <div className="header-section">
             {/* <div className="header-line"></div> */}
-            <p className="text-orange-600 tracking-widest uppercase text-sm">
+            {/* <p className="text-orange-600 tracking-widest uppercase text-sm">
             Strong, Steady, Sustainable
-          </p>
+          </p> */}
             
             <h1 className="header-title">
               Spool Collection
             </h1>
             
             <p className="header-description">
-              Every product starts here. Spools set the standard for durability, finish, and quality across our entire collection.       
+              Our ribbons and trims arrive beautifully-wrapped on premium spools. 
+              The artisan touch prevents creases, maintains the ribbon’s tension and drape, and gives your package, project, 
+              or display an immediate boutique look. Perfect for gifting and retail display — every spool 
+              is ready to showcase.
             </p>
           </div>
           

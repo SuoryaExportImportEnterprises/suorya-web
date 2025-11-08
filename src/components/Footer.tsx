@@ -127,15 +127,15 @@ export function Footer({ onNavigate }: FooterProps) {
                 </a>
               </div>
 
-              <div className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-1 text-orange-400 flex-shrink-0" />
-                <a
+              {/* <div className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-1 text-orange-400 flex-shrink-0" /> */}
+                {/* <a
                   href="tel:+919876543210"
                   className="hover:text-orange-400 transition-colors duration-300"
                 >
                   0120-4325089
-                </a>
-              </div>
+                </a> */}
+              {/* </div> */}
 
               <a
                 href="https://maps.app.goo.gl/BQBkuTU4SDMNY1sG9"

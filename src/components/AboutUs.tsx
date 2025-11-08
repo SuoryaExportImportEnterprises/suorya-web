@@ -40,15 +40,14 @@ export function AboutUs() {
           <div className="space-y-8">
             <p className="text-lg text-stone-600 leading-relaxed">
               Suorya Exports is a story of legacy, creativity, and commitment - a father’s 30+ years of mastery in textiles
-              joined by his daughter’s modern and trend-led design approach. Together, we’ve built more than a business - we’ve
-              nurtured a partnership rooted in trust, purposeful innovation, and a shared vision for future growth. From the 
-              first sketch to the final stitch, our design and production teams stay closely 
-              connected through the process, making sure every piece is crafted with care, detail, and the quality it deserves.
-              We balance heritage with innovation, pairing time-tested techniques with an eye for emerging styles, seasonal 
-              trends, and what today’s buyers truly seek - ensuring our collections remain relevant and retail-ready.
+              joined by his daughter’s fresh design perspective. Together, we’ve built more than a business - we’ve
+              nurtured a partnership rooted in trust, purposeful innovation, and a shared vision for growth. From the 
+              first sketch to the final stitch, our design and production teams collaborate through the process.
+              We balance heritage with innovation, pairing time-tested techniques with an eye for emerging styles and seasonal 
+              trends.
               <br></br>
-              What drives us is a simple yet profound belief: to be a reliable, design-forward partner for our buyers. Each 
-              piece we create carries a part of our story: the patience of years spent perfecting the craft, the curiosity to
+              What drives us is a simple yet profound belief: to be a reliable partner for our buyers. Each 
+              piece we create carries a part of our story — the curiosity to
               explore new ideas, and the joy of seeing ideas come to life. 
             </p>
           </div>

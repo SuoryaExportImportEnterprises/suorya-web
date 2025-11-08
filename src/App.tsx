@@ -290,14 +290,14 @@ const handleNavigate = (page: string) => {
             subtitle="Co-Creating Value, Season After Season"
             description="At Suorya, creativity is a collaborative journey.
             Our design team anchors the process from concept to creation - brainstorming, 
-            sketching, sampling, and refining until the idea feels just right. 
+            sketching, sampling, and refining until the idea feels just right and production friendly. 
             Once the design is finalised, our production team brings it to life with
-            precision and consistency at scale.
+            precision and consistency.
             We embrace diverse perspectives, encourage experimentation, and value the harmony 
             that comes when people create together. Every season, we explore new materials, 
             techniques, colours, and textures to ensure each product is thoughtful, relevant, 
-            and beautifully crafted. It’s this blend of imagination, teamwork, and disciplined 
-            execution that shapes the collections our customers love."
+            and beautifully crafted. It’s this blend of imagination and teamwork that shapes 
+            the collections our customers love."
             imageUrl="/home/heritage-1.jpg"
             imageAlt="Creative collaboration"
             reverse={true}

@@ -33,7 +33,7 @@ export function Hero() {
 
           </div>
 
-          <p className="text-lg md:text-xl font-medium text-stone-800 leading-relaxed max-w-xl">
+          <p className="text-lg md:text-xl text-stone-800 leading-relaxed max-w-xl">
             Where premium craftsmanship meets chic design. 
             <br />
             Celebrating over two

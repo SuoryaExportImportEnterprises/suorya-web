@@ -154,8 +154,8 @@ export function VisionSection() {
                 Artisan Techniques
               </h3>
               <p className="text-stone-600 text-lg leading-relaxed max-w-md">
-                Our craft is rooted in understanding of material, rhythm, and finish. 
-                Every artisan at Suorya brings their own method, their own way of working with thread, weave, and texture. 
+                Our craft is rooted in understanding of materials and finish. 
+                Every artisan at Suorya brings their method, their way of working with thread, weave, and texture. 
                 Together, their techniques create a quiet harmony where detail meets design, and tradition evolves through 
                 innovation in every collection.
               </p>

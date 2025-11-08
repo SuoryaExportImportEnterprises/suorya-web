@@ -745,7 +745,7 @@ export function ContactPage() {
             <option value="" disabled hidden>
               Select type
             </option>
-            <option>Order Placement</option>
+            <option>Request For Catalog</option>
             <option>Product Information</option>
             <option>Wholesale/Trade</option>
             <option>Event/Wedding</option>
@@ -784,10 +784,10 @@ export function ContactPage() {
 
         <div className="border-t border-stone-200 pt-4 mt-2">
           <h3 className="text-lg text-stone-800 mb-3">
-            For Trade & Wholesale Inquiries
+            For International Trade & Wholesale Inquiries
           </h3>
           <p className="text-stone-600 mb-6">
-            We work with retail stores, interior designers and event planners
+            We work with importers, retail stores, interior designers and event planners
             worldwide. Contact us for wholesale pricing and custom orders.
           </p>
         </div>
@@ -833,7 +833,7 @@ export function ContactPage() {
             </div>
           </div>
 
-          <div className="flex items-start space-x-4">
+          {/* <div className="flex items-start space-x-4">
             <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
               <Phone className="w-5 h-5 text-orange-600" />
             </div>
@@ -849,7 +849,7 @@ export function ContactPage() {
                 Mon–Sat, 9:30am – 6pm IST
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

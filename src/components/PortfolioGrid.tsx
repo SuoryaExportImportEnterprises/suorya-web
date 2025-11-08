@@ -532,7 +532,7 @@ export function PortfolioGrid() {
           Inspiration Gallery
         </p>
         <h2 className="text-4xl md:text-5xl text-stone-800 font-semibold">
-          See Our Creations in Action
+          See our Creations in Action
         </h2>
         <p className="text-base text-lg text-stone-600 max-w-2xl mx-auto">
           From store displays to life’s special moments, our designs add that little touch people pause to admire.

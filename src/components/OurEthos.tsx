@@ -12,7 +12,7 @@ import "./OurEthos.css";
 export default function OurEthos() {
   const items = [
     { key: "craft", label: "Premium Craftsmanship", Icon: Sparkles },
-    { key: "quality", label: "Quality Assured", Icon: BadgeCheck },
+    { key: "quality", label: "Quality Assurance", Icon: BadgeCheck },
     { key: "timely", label: "Timely Delivery", Icon: Truck },
     { key: "collab", label: "Design Collaboration", Icon: Group },
     { key: "trend", label: "Competitive Pricing", Icon: BadgeDollarSign },
@@ -26,9 +26,9 @@ export default function OurEthos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10">
-          <p className="text-orange-600 tracking-widest uppercase text-sm">
+          {/* <p className="text-orange-600 tracking-widest uppercase text-sm">
             We build what we’d want to receive
-          </p>
+          </p> */}
           <h2
             id="ethos-heading"
             className="text-4xl md:text-5xl font-semibold text-stone-800"

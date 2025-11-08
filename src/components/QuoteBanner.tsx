@@ -8,14 +8,14 @@ export function QuoteBanner() {
         <div className="bg-white border border-orange-100 rounded-2xl shadow-sm p-8 md:p-10 text-center">
           {/* Main Quote */}
           <p className="text-lg font-normal mb-0 leading-relaxed text-stone-600 mx-auto max-w-4xl">
-            "With more than 30 years of experience working with international
-            brands, we follow export best practices and meet global quality
+            With more than 30 years of experience working with international
+            brands, we follow export best practices and meet international quality
             standards. We are{" "}
             <span>
               SEDEX certified
             </span>
             , which reflects our commitment to responsible and ethical
-            production."
+            production.
           </p>
 
 <div className="flex flex-wrap justify-between md:justify-around items-center gap-12 mt-8 text-stone-600 w-full max-w-2xl mx-auto">
