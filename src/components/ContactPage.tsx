@@ -497,7 +497,7 @@
 
 
 
-import { Mail, MapPin, Phone } from "lucide-react";
+import { HouseIcon, Mail, MapPin, Phone } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import countries from "country-telephone-data";
 import toast, { Toaster } from "react-hot-toast";
@@ -512,6 +512,7 @@ interface FormData {
   message: string;
   countryIso?: string;
   dialCode?: string;
+  companyCategory: string;
 }
 
 export function ContactPage() {
@@ -525,6 +526,7 @@ export function ContactPage() {
     message: "",
     countryIso: "in",
     dialCode: "+91",
+    companyCategory: "",
   });
 
   // Keep dialCode synced when country changes
@@ -564,6 +566,7 @@ export function ContactPage() {
           message: "",
           countryIso: "in",
           dialCode: "+91",
+          companyCategory: "",
         });
       } else {
         toast.error("Failed to send message. Please try again.");
@@ -616,13 +619,39 @@ export function ContactPage() {
           </div>
         ))}
 
+
+        {/* Company Category (required) */}
+<div>
+  <label htmlFor="companyCategory" className="block text-stone-700 mb-1 text-md">
+    Company Category *
+  </label>
+  <select
+    id="companyCategory"
+    value={formData.companyCategory}
+    onChange={(e) => setFormData({ ...formData, companyCategory: e.target.value })}
+    className="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg 
+    focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent text-sm"
+    required
+  >
+    <option value="" disabled hidden>
+      Select category
+    </option>
+    <option>Importer/Wholesaler</option>
+    <option>Retailer</option>
+    <option>Agent</option>
+  </select>
+</div>
+
+
+
+
         {/* Designation */}
         <div>
           <label
             htmlFor="designation"
             className="block text-stone-700 mb-1 text-md"
           >
-            Designation
+            Designation *
           </label>
           <select
             id="designation"
@@ -730,7 +759,7 @@ export function ContactPage() {
         {/* Inquiry */}
         <div>
           <label htmlFor="inquiry" className="block text-stone-700 mb-1 text-md">
-            Type of Inquiry
+            Type of Inquiry *
           </label>
           <select
             id="inquiry"
@@ -830,6 +859,8 @@ export function ContactPage() {
               <p className="text-sm text-stone-600 mt-1">
                 We respond within 48 hours
               </p>
+
+              
             </div>
           </div>
 
@@ -850,6 +881,23 @@ export function ContactPage() {
               </p>
             </div>
           </div> */}
+
+          {/* Address Section */}
+<div className="flex items-start space-x-4 mt-6">
+  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+    <HouseIcon className="w-5 h-5 text-orange-600" />
+  </div>
+  <div>
+    <h3 className="text-lg text-stone-800 mb-1">Our Address</h3>
+    <p className="text-stone-600">
+      D139, D Block, Sector 63, Noida, 
+      Uttar Pradesh - 201301
+      <br />
+      <span className="text-lg text-stone-600">India</span>
+    </p>
+  </div>
+</div>
+
         </div>
       </div>
 
