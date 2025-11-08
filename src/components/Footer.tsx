@@ -27,12 +27,12 @@ export function Footer({ onNavigate }: FooterProps) {
             
             <div>
     <a
-      href="https://www.linkedin.com/company/suorya-export-import-enterprise/"  // 🔗 Replace with your actual LinkedIn URL
+      href="https://www.linkedin.com/company/suorya-export-import-enterprise/"  
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-stone-800 hover:bg-orange-500 transition-colors duration-300"
     >
-      <Linkedin className="w-4 h-4 text-stone-300 hover:text-white" />
+      <Linkedin className="w-8 h-8 hover:text-white" />
     </a>
   </div>
           </div>
