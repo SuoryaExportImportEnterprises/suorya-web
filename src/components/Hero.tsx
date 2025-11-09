@@ -41,13 +41,7 @@ export function Hero() {
             transform ordinary moments into extraordinary memories.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            {/* <a
-              href="#about"
-              className="inline-flex items-center justify-center px-8 py-4 bg-stone-800 text-[rgba(255,255,255,1)] rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Our Story
-            </a> */}            
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">          
           </div>
         </div>
       </div>

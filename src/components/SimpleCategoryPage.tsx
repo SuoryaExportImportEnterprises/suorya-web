@@ -24,26 +24,6 @@ export function SimpleCategoryPage({
   return (
     <div className="min-h-screen bg-white pt-20">
 
-      {/* Cover Section - Reduced height */}
-      {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
-        <ImageWithFallback
-          src={coverImageUrl}
-          alt={categoryName}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white space-y-4 px-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-wide">
-              {categoryName}
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90">
-              Explore our complete {categoryName.toLowerCase()} collection
-            </p>
-          </div>
-        </div>
-      </div> */}
-
       {/* Cover Section - Refined aesthetic */}
 <div className="relative h-[220px] md:h-[300px] w-full overflow-hidden mb-16">
   <ImageWithFallback

@@ -10,12 +10,12 @@
 /* ✅ Uniform image container */
 .slide-container {
   flex-shrink: 0;
-  width: 300px;        /* fixed width */
-  height: 300px;       /* fixed height */
-  border-radius: 1rem; /* same rounding everywhere */
+  width: 300px;        
+  height: 300px;       
+  border-radius: 1rem; 
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-color: #f5f5f5; /* placeholder while image loads */
+  background-color: #f5f5f5; 
 }
 
 /* ✅ Uniform image behavior */

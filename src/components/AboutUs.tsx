@@ -19,15 +19,6 @@ export function AboutUs() {
 
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          {/* <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full"> */}
-            {/* <img
-              src="/home/father-daughter.jpg"
-              alt="Suorya Craftsmanship"
-              className="w-full h-full object-cover aspect-[16/10]"
-            /> */}
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent"></div> */}
-          {/* </div> */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center bg-stone-100">
             <img
               src="/home/father-daughter-hd.jpeg"

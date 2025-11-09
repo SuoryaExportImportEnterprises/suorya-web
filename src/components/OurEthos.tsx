@@ -26,9 +26,6 @@ export default function OurEthos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10">
-          {/* <p className="text-orange-600 tracking-widest uppercase text-sm">
-            We build what we’d want to receive
-          </p> */}
           <h2
             id="ethos-heading"
             className="text-4xl md:text-5xl font-semibold text-stone-800"

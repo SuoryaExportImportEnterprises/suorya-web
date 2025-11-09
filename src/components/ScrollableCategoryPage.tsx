@@ -41,26 +41,6 @@ export function ScrollableCategoryPage({
         </Button>
       </div>
 
-      {/* Cover Section - Reduced height */}
-      {/* <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden mb-20">
-        <ImageWithFallback
-          src={coverImageUrl}
-          alt={categoryName}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white space-y-4 px-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-wide">
-              {categoryName}
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90">
-              Scroll down to explore our complete collection
-            </p>
-          </div>
-        </div>
-      </div> */}
-
       {/* Subcategory Sections */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         {subcategories.map((subcategory, index) => (

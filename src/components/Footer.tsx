@@ -96,14 +96,6 @@ export function Footer({ onNavigate }: FooterProps) {
                   Trims
                 </button>
               </li>
-              {/* <li>
-                <button
-                  onClick={() => handleNavigate("bows")}
-                  className="hover:text-orange-400 transition-colors duration-300 text-left"
-                >
-                  Bows
-                </button>
-              </li> */}
               
               <li>
                 <button
@@ -116,7 +108,6 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Contact Us Section - CLEAN FORMAT LIKE IMAGE */}
           <div>
             <h4 className="text-white mb-4">Contact Us</h4>
             <div className="space-y-3 text-sm leading-relaxed">
