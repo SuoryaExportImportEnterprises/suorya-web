@@ -864,24 +864,6 @@ export function ContactPage() {
             </div>
           </div>
 
-          {/* <div className="flex items-start space-x-4">
-            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <Phone className="w-5 h-5 text-orange-600" />
-            </div>
-            <div>
-              <h3 className="text-lg text-stone-800 mb-1">Call Us</h3>
-              <a
-                href="tel:+911204325089"
-                className="text-orange-600 hover:text-orange-700 transition-colors duration-300"
-              >
-                0120-4325089
-              </a>
-              <p className="text-sm text-stone-600 mt-1">
-                Mon–Sat, 9:30am – 6pm IST
-              </p>
-            </div>
-          </div> */}
-
           {/* Address Section */}
 <div className="flex items-start space-x-4 mt-6">
   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">

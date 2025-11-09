@@ -23,6 +23,7 @@ export default async function handler(req, res) {
     const {
       name,
       company,
+      companyCategory,
       designation,
       email,
       phone,
@@ -68,6 +69,9 @@ if (!isValidEmail(emailNormalized)) {
         <table cellpadding="8" cellspacing="0" border="1" style="border-collapse: collapse; border: 1px solid #ddd;">
           <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
           <tr><td><strong>Company</strong></td><td>${escapeHtml(company)}</td></tr>
+          <tr><td><strong>Company Category</strong></td><td>${escapeHtml(
+            companyCategory
+          )}</td></tr>
           <tr><td><strong>Designation</strong></td><td>${escapeHtml(designation)}</td></tr>
           <tr><td><strong>Email</strong></td><td>${escapeHtml(emailNormalized)}</td></tr>
           <tr><td><strong>Phone</strong></td><td>${escapeHtml(fullPhone)}</td></tr>
