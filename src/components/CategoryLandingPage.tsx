@@ -4,6 +4,8 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 //@ts-ignore
 import "./CategoryLandingPage.css"; // ✅ Import the CSS file
 
+import { useEffect } from "react";
+
 interface Subcategory {
   name: string;
   description: string;
@@ -18,6 +20,12 @@ interface CategoryLandingPageProps {
   onSubcategoryClick: (subcategoryName: string) => void;
 }
 
+
+
+
+
+
+
 export function CategoryLandingPage({
   categoryName,
   coverImageUrl,
@@ -25,6 +33,20 @@ export function CategoryLandingPage({
   onBack,
   onSubcategoryClick,
 }: CategoryLandingPageProps) {
+
+
+  useEffect(() => {
+  const target = localStorage.getItem("scrollTarget");
+  if (target) {
+    const el = document.getElementById(target);
+    if (el) {
+      // Smooth scroll to the correct card
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      localStorage.removeItem("scrollTarget"); // cleanup
+    }
+  }
+}, []);
+
   return (
     <div className="min-h-screen bg-white pt-20">
       
@@ -52,7 +74,7 @@ export function CategoryLandingPage({
       {/* Subcategory Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {subcategories.map((subcategory, index) => (
+          {/* {subcategories.map((subcategory, index) => (
             <button
               key={index}
               onClick={() => onSubcategoryClick(subcategory.name)}
@@ -74,7 +96,33 @@ export function CategoryLandingPage({
                 </p>
               </div>
             </button>
-          ))}
+          ))} */}
+
+          {subcategories.map((subcategory, index) => (
+  <button
+    key={index}
+    id={subcategory.name.toLowerCase().replace(/\s+/g, "-")}  // 👈 gives each item an anchor ID
+    onClick={() => onSubcategoryClick(subcategory.name)}
+    className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-left"
+  >
+    <div className="aspect-[4/3] overflow-hidden bg-stone-100 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-2xl">
+      <ImageWithFallback
+        src={subcategory.imageUrl}
+        alt={subcategory.name}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+    </div>
+    <div className="p-6">
+      <h3 className="text-xl text-stone-800 mb-2 group-hover:text-orange-600 transition-colors duration-300">
+        {subcategory.name}
+      </h3>
+      <p className="text-stone-600 text-sm leading-relaxed">
+        {subcategory.description}
+      </p>
+    </div>
+  </button>
+))}
+
         </div>
       </div>
     </div>

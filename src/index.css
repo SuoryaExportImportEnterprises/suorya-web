@@ -157,6 +157,31 @@
   width: 100%;
   }
 
+  html {
+  scroll-behavior: smooth;
+}
+
+
+  /* G-translate */
+  #gtranslate_wrapper {
+  transition: opacity 0.3s ease-in-out;
+  }
+
+  #gtranslate_wrapper:hover {
+  opacity: 0.9;
+  }
+
+  #gtranslate_wrapper {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 20px !important; /* ✅ Moved to left */
+  z-index: 2147483647 !important;
+}
+
+#gtranslate_wrapper iframe,
+#gtranslate_wrapper div {
+  z-index: 999999 !important;
+}
 
   body {
     line-height: inherit;
