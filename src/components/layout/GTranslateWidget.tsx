@@ -14,8 +14,19 @@ export function GTranslateWidget() {
 
     (window as any).gtranslateSettings = {
       default_language: "en",
-      native_language_names: true,
-      languages: ["en", "ar", "fr", "de", "it", "pt", "ru", "es", "ja", "nl"],
+      native_language_names: false,
+      languages: [
+        "en", // English
+        "ar", // Arabic
+        "ja", // Japanese
+        "nl", // Dutch
+        "fr", // French
+        "de", // German
+        "it", // Italian
+        "pt", // Portuguese
+        "ru", // Russian
+        "es", // Spanish
+      ],
       wrapper_selector: "#gtranslate_wrapper",
       switcher_horizontal_position: "left",
       switcher_vertical_position: "bottom",
