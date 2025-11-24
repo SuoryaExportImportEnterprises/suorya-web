@@ -546,7 +546,7 @@ export function ContactPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://clfsnmd7q5.execute-api.ap-south-1.amazonaws.com/default/contactFormHandler", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

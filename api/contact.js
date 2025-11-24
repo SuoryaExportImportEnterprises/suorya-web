@@ -10,8 +10,6 @@ function isValidEmail(email = "") {
   return EMAIL_RE.test(e);
 }
 
-
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
