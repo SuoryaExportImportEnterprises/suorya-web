@@ -724,7 +724,7 @@ export function ContactPage() {
                 type="tel"
                 id="phone"
                 required
-                pattern="[0-9\s\-()]{6,20}"
+                pattern="[0-9 ()-]{6,20}"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
