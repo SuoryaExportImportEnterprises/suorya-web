@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    gtag: any;
+  }
+}
+
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
@@ -14,13 +20,23 @@ import SearchPage from "./pages/SearchPage";
 
 export default function App() {
 
-const location = useLocation();
+  const location = useLocation();
 
- useEffect(() => {
-    // 🧩 Force GTranslate widget to re-run on every route change
+  // ⭐ GOOGLE ANALYTICS PAGE VIEW TRACKING
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("config", "G-7J0HSVVXQQ", {
+        page_path: location.pathname,
+      });
+      console.log("📊 GA page_view sent:", location.pathname);
+    }
+  }, [location.pathname]);
+
+  // 🌍 GTRANSLATE RELOAD ON ROUTE CHANGE
+  useEffect(() => {
     const scriptId = "gtranslate-dynamic";
     const existing = document.getElementById(scriptId);
-    if (existing) existing.remove(); // remove old script instance
+    if (existing) existing.remove();
 
     const script = document.createElement("script");
     script.id = scriptId;
@@ -31,7 +47,6 @@ const location = useLocation();
     console.log("🌍 GTranslate script reloaded for:", location.pathname);
 
     return () => {
-      // Optional: clean old script
       const old = document.getElementById(scriptId);
       if (old) old.remove();
     };
