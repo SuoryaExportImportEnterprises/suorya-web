@@ -27,6 +27,14 @@
   display: block;
 }
 
+.slider-track {
+  cursor: grab;
+}
+.slider-track:active {
+  cursor: grabbing;
+}
+
+
 /* Smooth infinite motion */
 @keyframes scroll {
   from {

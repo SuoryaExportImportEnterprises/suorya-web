@@ -507,7 +507,88 @@
 
 // INFINITE SLIDER
 
-import React from "react";
+// import React from "react";
+// //@ts-ignore
+// import "./infiniteSlider.css";
+
+// export function PortfolioGrid() {
+//   const images = [
+//     "/images/gifting.jpg",
+//     "/images/satin-bow-garland.JPG",
+//     "/images/bouquet.jpg",
+//     "/images/bow_blue.png",
+//     "/images/satin-bow-cover.png",
+//     "/images/long_bow.JPG",
+//     "/images/red_bow.png",
+//   ];
+
+//   const loopImages = [...images, ...images];
+
+//   return (
+//     <section className="py-16 bg-white relative overflow-hidden z-[10] mb-24">
+//       {/* Section Header */}
+//       <div className="text-center mb-10 space-y-4">
+//         <p className="text-orange-600 tracking-widest uppercase text-sm">
+//           Inspiration Gallery
+//         </p>
+//         <h2 className="text-4xl md:text-5xl text-stone-800 font-semibold">
+//           See our Creations in Action
+//         </h2>
+//         <p className="text-base text-lg text-stone-600 max-w-2xl mx-auto">
+//           From store displays to life’s special moments, our designs add that little touch people pause to admire.
+//         </p>
+//       </div>
+
+//       {/* Infinite Slider */}
+//       <div className="relative overflow-hidden w-full">
+//         <div className="slider-track flex gap-6">
+//           {loopImages.map((img, i) => (
+//             <div
+//               key={i}
+//               className="slide-container"
+//             >
+//               <img
+//                 src={img}
+//                 alt={`slide-${i}`}
+//                 className="slide-image"
+//               />
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Gradient Edges */}
+//         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+//         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent"></div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Swipable Slider with infinite carousel
+import React, { useRef, useState } from "react";
 //@ts-ignore
 import "./infiniteSlider.css";
 
@@ -524,9 +605,92 @@ export function PortfolioGrid() {
 
   const loopImages = [...images, ...images];
 
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Swipe state
+  const [startX, setStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [currentTranslate, setCurrentTranslate] = useState(0);
+
+  // Stop infinite animation
+  const stopAnimation = () => {
+    if (trackRef.current) {
+      trackRef.current.style.animation = "none";
+    }
+  };
+
+  // Resume infinite animation
+  const resumeAnimation = () => {
+    if (trackRef.current) {
+      trackRef.current.style.animation = "";
+    }
+  };
+
+  // TOUCH start
+  const handleTouchStart = (e: React.TouchEvent) => {
+    stopAnimation();
+    setStartX(e.touches?.[0]?.clientX ?? 0);
+    setIsDragging(true);
+  };
+
+  // TOUCH move
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !trackRef.current) return;
+
+    const diff = e.touches?.[0]?.clientX ?? 0 - startX;
+
+    trackRef.current.style.transform = `translateX(${currentTranslate + diff}px)`;
+  };
+
+  // TOUCH end
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+
+    const endX = e.changedTouches?.[0]?.clientX ?? 0;
+    const diff = endX - startX;
+
+    if (diff > 50) {
+      setCurrentTranslate((prev) => prev + 200);
+    } else if (diff < -50) {
+      setCurrentTranslate((prev) => prev - 200);
+    }
+
+    resumeAnimation();
+    setIsDragging(false);
+  };
+
+  // Desktop drag support
+  const handleMouseDown = (e: React.MouseEvent) => {
+    stopAnimation();
+    setStartX(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !trackRef.current) return;
+
+    const diff = e.clientX - startX;
+    trackRef.current.style.transform = `translateX(${currentTranslate + diff}px)`;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+
+    const diff = e.clientX - startX;
+
+    if (diff > 50) {
+      setCurrentTranslate((prev) => prev + 200);
+    } else if (diff < -50) {
+      setCurrentTranslate((prev) => prev - 200);
+    }
+
+    resumeAnimation();
+    setIsDragging(false);
+  };
+
   return (
     <section className="py-16 bg-white relative overflow-hidden z-[10] mb-24">
-      {/* Section Header */}
+      {/* Header */}
       <div className="text-center mb-10 space-y-4">
         <p className="text-orange-600 tracking-widest uppercase text-sm">
           Inspiration Gallery
@@ -540,23 +704,28 @@ export function PortfolioGrid() {
       </div>
 
       {/* Infinite Slider */}
-      <div className="relative overflow-hidden w-full">
-        <div className="slider-track flex gap-6">
+      <div
+        className="relative overflow-hidden w-full"
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <div
+          className="slider-track flex gap-6"
+          ref={trackRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+        >
           {loopImages.map((img, i) => (
-            <div
-              key={i}
-              className="slide-container"
-            >
-              <img
-                src={img}
-                alt={`slide-${i}`}
-                className="slide-image"
-              />
+            <div key={i} className="slide-container">
+              <img src={img} alt={`slide-${i}`} className="slide-image" />
             </div>
           ))}
         </div>
 
-        {/* Gradient Edges */}
+        {/* Gradient edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent"></div>
       </div>
