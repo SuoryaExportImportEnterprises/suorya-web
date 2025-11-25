@@ -588,9 +588,364 @@
 
 
 // Swipable Slider with infinite carousel
-import React, { useRef, useState } from "react";
+// import React, { useRef, useState } from "react";
+// //@ts-ignore
+// import "./infiniteSlider.css";
+
+// export function PortfolioGrid() {
+//   const images = [
+//     "/images/gifting.jpg",
+//     "/images/satin-bow-garland.JPG",
+//     "/images/bouquet.jpg",
+//     "/images/bow_blue.png",
+//     "/images/satin-bow-cover.png",
+//     "/images/long_bow.JPG",
+//     "/images/red_bow.png",
+//   ];
+
+//   const loopImages = [...images, ...images];
+
+//   const trackRef = useRef<HTMLDivElement>(null);
+
+//   // Swipe state
+//   const [startX, setStartX] = useState(0);
+//   const [isDragging, setIsDragging] = useState(false);
+//   const [currentTranslate, setCurrentTranslate] = useState(0);
+
+//   // Stop infinite animation
+//   const stopAnimation = () => {
+//     if (trackRef.current) {
+//       trackRef.current.style.animation = "none";
+//     }
+//   };
+
+//   // Resume infinite animation
+//   const resumeAnimation = () => {
+//     if (trackRef.current) {
+//       trackRef.current.style.animation = "";
+//     }
+//   };
+
+//   // TOUCH start
+//   const handleTouchStart = (e: React.TouchEvent) => {
+//     stopAnimation();
+//     setStartX(e.touches?.[0]?.clientX ?? 0);
+//     setIsDragging(true);
+//   };
+
+//   // TOUCH move
+//   const handleTouchMove = (e: React.TouchEvent) => {
+//     if (!isDragging || !trackRef.current) return;
+
+//     const diff = e.touches?.[0]?.clientX ?? 0 - startX;
+
+//     trackRef.current.style.transform = `translateX(${currentTranslate + diff}px)`;
+//   };
+
+//   // TOUCH end
+//   const handleTouchEnd = (e: React.TouchEvent) => {
+//     if (!isDragging) return;
+
+//     const endX = e.changedTouches?.[0]?.clientX ?? 0;
+//     const diff = endX - startX;
+
+//     if (diff > 50) {
+//       setCurrentTranslate((prev) => prev + 200);
+//     } else if (diff < -50) {
+//       setCurrentTranslate((prev) => prev - 200);
+//     }
+
+//     resumeAnimation();
+//     setIsDragging(false);
+//   };
+
+//   // Desktop drag support
+//   const handleMouseDown = (e: React.MouseEvent) => {
+//     stopAnimation();
+//     setStartX(e.clientX);
+//     setIsDragging(true);
+//   };
+
+//   const handleMouseMove = (e: React.MouseEvent) => {
+//     if (!isDragging || !trackRef.current) return;
+
+//     const diff = e.clientX - startX;
+//     trackRef.current.style.transform = `translateX(${currentTranslate + diff}px)`;
+//   };
+
+//   const handleMouseUp = (e: React.MouseEvent) => {
+//     if (!isDragging) return;
+
+//     const diff = e.clientX - startX;
+
+//     if (diff > 50) {
+//       setCurrentTranslate((prev) => prev + 200);
+//     } else if (diff < -50) {
+//       setCurrentTranslate((prev) => prev - 200);
+//     }
+
+//     resumeAnimation();
+//     setIsDragging(false);
+//   };
+
+//   return (
+//     <section className="py-16 bg-white relative overflow-hidden z-[10] mb-24">
+//       {/* Header */}
+//       <div className="text-center mb-10 space-y-4">
+//         <p className="text-orange-600 tracking-widest uppercase text-sm">
+//           Inspiration Gallery
+//         </p>
+//         <h2 className="text-4xl md:text-5xl text-stone-800 font-semibold">
+//           See our Creations in Action
+//         </h2>
+//         <p className="text-base text-lg text-stone-600 max-w-2xl mx-auto">
+//           From store displays to life’s special moments, our designs add that little touch people pause to admire.
+//         </p>
+//       </div>
+
+//       {/* Infinite Slider */}
+//       <div
+//         className="relative overflow-hidden w-full"
+//         onMouseMove={handleMouseMove}
+//         onMouseUp={handleMouseUp}
+//         onMouseLeave={handleMouseUp}
+//       >
+//         <div
+//           className="slider-track flex gap-6"
+//           ref={trackRef}
+//           onTouchStart={handleTouchStart}
+//           onTouchMove={handleTouchMove}
+//           onTouchEnd={handleTouchEnd}
+//           onMouseDown={handleMouseDown}
+//         >
+//           {loopImages.map((img, i) => (
+//             <div key={i} className="slide-container">
+//               <img src={img} alt={`slide-${i}`} className="slide-image" />
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Gradient edges */}
+//         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+//         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent"></div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useRef } from "react";
+// // @ts-ignore
+// import "./infiniteSlider.css";
+
+// export function PortfolioGrid() {
+//   const images = [
+//     "/images/gifting.jpg",
+//     "/images/satin-bow-garland.JPG",
+//     "/images/bouquet.jpg",
+//     "/images/bow_blue.png",
+//     "/images/satin-bow-cover.png",
+//     "/images/long_bow.JPG",
+//     "/images/red_bow.png",
+//   ];
+
+//   const loopImages = [...images, ...images];
+//   const trackRef = useRef<HTMLDivElement>(null);
+
+//   const slideWidth = 300 + 24; // card + gap
+
+//   const moveLeft = () => {
+//     if (trackRef.current) {
+//       trackRef.current.style.animation = "none"; // stop current animation
+//       const current = trackRef.current.style.transform || "translateX(0px)";
+//       const currentX = parseFloat(current.replace("translateX(", "").replace("px)", "")) || 0;
+//       trackRef.current.style.transform = `translateX(${currentX + slideWidth}px)`;
+//     }
+//   };
+
+//   const moveRight = () => {
+//     if (trackRef.current) {
+//       trackRef.current.style.animation = "none"; // stop current animation
+//       const current = trackRef.current.style.transform || "translateX(0px)";
+//       const currentX = parseFloat(current.replace("translateX(", "").replace("px)", "")) || 0;
+//       trackRef.current.style.transform = `translateX(${currentX - slideWidth}px)`;
+//     }
+//   };
+
+//   return (
+//     <section className="py-16 bg-white relative overflow-hidden z-[10] mb-24">
+//       {/* Section Header */}
+//       <div className="text-center mb-10 space-y-4">
+//         <p className="text-orange-600 tracking-widest uppercase text-sm">
+//           Inspiration Gallery
+//         </p>
+//         <h2 className="text-4xl md:text-5xl text-stone-800 font-semibold">
+//           See our Creations in Action
+//         </h2>
+//         <p className="text-base text-lg text-stone-600 max-w-2xl mx-auto">
+//           From store displays to life’s special moments, our designs add that little touch people pause to admire.
+//         </p>
+//       </div>
+
+//       {/* Infinite Slider */}
+//       <div className="relative overflow-hidden w-full">
+
+//         {/* Slider Track */}
+//         <div className="slider-track flex gap-6" ref={trackRef}>
+//           {loopImages.map((img, i) => (
+//             <div key={i} className="slide-container">
+//               <img
+//                 src={img}
+//                 alt={`slide-${i}`}
+//                 className="slide-image"
+//               />
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Left Button */}
+//         <button
+//           onClick={moveLeft}
+//           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/70 shadow-md hover:bg-white p-3 rounded-full"
+//         >
+//           ❮
+//         </button>
+
+//         {/* Right Button */}
+//         <button
+//           onClick={moveRight}
+//           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/70 shadow-md hover:bg-white p-3 rounded-full"
+//         >
+//           ❯
+//         </button>
+
+//         {/* Gradient Edges */}
+//         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+//         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent"></div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { Splide, SplideSlide } from "@splidejs/react-splide";
+// import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+// //@ts-ignore
+// import "@splidejs/react-splide/css";
+
+// export function PortfolioGrid() {
+//   const images = [
+//     "/images/gifting.jpg",
+//     "/images/satin-bow-garland.JPG",
+//     "/images/bouquet.jpg",
+//     "/images/bow_blue.png",
+//     "/images/satin-bow-cover.png",
+//     "/images/long_bow.JPG",
+//     "/images/red_bow.png",
+//   ];
+
+//   return (
+//     <section className="py-16 bg-white relative overflow-hidden z-10 mb-24">
+      
+//       <div className="text-center mb-10 space-y-4">
+//         <p className="text-orange-600 tracking-widest uppercase text-sm">
+//           Inspiration Gallery
+//         </p>
+//         <h2 className="text-4xl md:text-5xl text-stone-800 font-semibold">
+//           See our Creations in Action
+//         </h2>
+//         <p className="text-base text-lg text-stone-600 max-w-2xl mx-auto">
+//           From store displays to life’s special moments, our designs add that little touch people pause to admire.
+//         </p>
+//       </div>
+
+//       <Splide
+//         options={{
+//           type: "loop",
+//           arrows: true,
+//           pagination: false,
+//           drag: true,
+
+//           // ⭐ SHOW EXACTLY 4 IMAGES
+//           perPage: 4,
+//           gap: "24px",
+//           padding: "0px",
+//           trimSpace: true,
+
+//           // ⭐ SAME SPEED AS YOUR ORIGINAL INFINITE CSS
+//           autoScroll: {
+//             pauseOnHover: true,
+//             pauseOnFocus: false,
+//             rewind: false,
+//             speed: 1.2,
+//           },
+//         }}
+//         extensions={{ AutoScroll }}
+//         className="px-4"
+//       >
+//         {[...images, ...images].map((img, i) => (
+//           <SplideSlide key={i}>
+//             <div
+//               style={{
+//                 width: "300px",
+//                 height: "300px",
+//                 borderRadius: "16px",
+//                 overflow: "hidden",
+//                 background: "#f5f5f5",
+//                 boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+//               }}
+//             >
+//               <img
+//                 src={img}
+//                 alt={`slide-${i}`}
+//                 style={{
+//                   width: "100%",
+//                   height: "100%",
+//                   objectFit: "cover",
+//                 }}
+//               />
+//             </div>
+//           </SplideSlide>
+//         ))}
+//       </Splide>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 //@ts-ignore
-import "./infiniteSlider.css";
+import "@splidejs/react-splide/css";
 
 export function PortfolioGrid() {
   const images = [
@@ -603,93 +958,11 @@ export function PortfolioGrid() {
     "/images/red_bow.png",
   ];
 
-  const loopImages = [...images, ...images];
-
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  // Swipe state
-  const [startX, setStartX] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [currentTranslate, setCurrentTranslate] = useState(0);
-
-  // Stop infinite animation
-  const stopAnimation = () => {
-    if (trackRef.current) {
-      trackRef.current.style.animation = "none";
-    }
-  };
-
-  // Resume infinite animation
-  const resumeAnimation = () => {
-    if (trackRef.current) {
-      trackRef.current.style.animation = "";
-    }
-  };
-
-  // TOUCH start
-  const handleTouchStart = (e: React.TouchEvent) => {
-    stopAnimation();
-    setStartX(e.touches?.[0]?.clientX ?? 0);
-    setIsDragging(true);
-  };
-
-  // TOUCH move
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !trackRef.current) return;
-
-    const diff = e.touches?.[0]?.clientX ?? 0 - startX;
-
-    trackRef.current.style.transform = `translateX(${currentTranslate + diff}px)`;
-  };
-
-  // TOUCH end
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-
-    const endX = e.changedTouches?.[0]?.clientX ?? 0;
-    const diff = endX - startX;
-
-    if (diff > 50) {
-      setCurrentTranslate((prev) => prev + 200);
-    } else if (diff < -50) {
-      setCurrentTranslate((prev) => prev - 200);
-    }
-
-    resumeAnimation();
-    setIsDragging(false);
-  };
-
-  // Desktop drag support
-  const handleMouseDown = (e: React.MouseEvent) => {
-    stopAnimation();
-    setStartX(e.clientX);
-    setIsDragging(true);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !trackRef.current) return;
-
-    const diff = e.clientX - startX;
-    trackRef.current.style.transform = `translateX(${currentTranslate + diff}px)`;
-  };
-
-  const handleMouseUp = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-
-    const diff = e.clientX - startX;
-
-    if (diff > 50) {
-      setCurrentTranslate((prev) => prev + 200);
-    } else if (diff < -50) {
-      setCurrentTranslate((prev) => prev - 200);
-    }
-
-    resumeAnimation();
-    setIsDragging(false);
-  };
+  const repeatedImages = [...images, ...images];
 
   return (
-    <section className="py-16 bg-white relative overflow-hidden z-[10] mb-24">
+    <section className="py-16 bg-white relative overflow-hidden z-10 mb-24">
+      
       {/* Header */}
       <div className="text-center mb-10 space-y-4">
         <p className="text-orange-600 tracking-widest uppercase text-sm">
@@ -703,32 +976,56 @@ export function PortfolioGrid() {
         </p>
       </div>
 
-      {/* Infinite Slider */}
-      <div
-        className="relative overflow-hidden w-full"
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
-        <div
-          className="slider-track flex gap-6"
-          ref={trackRef}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onMouseDown={handleMouseDown}
-        >
-          {loopImages.map((img, i) => (
-            <div key={i} className="slide-container">
-              <img src={img} alt={`slide-${i}`} className="slide-image" />
-            </div>
-          ))}
-        </div>
+      {/* Splide Slider */}
+      <Splide
+        options={{
+          type: "loop",
+          arrows: true,
+          pagination: false,
+          drag: true,
 
-        {/* Gradient edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent"></div>
-      </div>
+          // ⭐ EXACT SETTINGS YOU WANT
+          perPage: 4,     // show 4 at a time
+          perMove: 1,     // ⭐ move EXACTLY 1 on click
+          gap: "24px",    // same spacing as before
+          padding: 0,
+          trimSpace: true,
+
+          autoScroll: {
+            pauseOnHover: true,   // ⭐ keep pause on hover
+            pauseOnFocus: true,
+            rewind: false,
+            speed: 1.2,           // same as original CSS scroll feel
+          },
+        }}
+        extensions={{ AutoScroll }}
+        className="px-0"
+      >
+        {repeatedImages.map((img, i) => (
+          <SplideSlide key={i}>
+            <div
+              style={{
+                width: "300px",
+                height: "300px",
+                borderRadius: "16px",
+                overflow: "hidden",
+                background: "#f5f5f5",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              }}
+            >
+              <img
+                src={img}
+                alt={`slide-${i}`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+          </SplideSlide>
+        ))}
+      </Splide>
     </section>
   );
 }

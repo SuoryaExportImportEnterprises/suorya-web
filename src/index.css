@@ -1,4 +1,6 @@
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+@import '@splidejs/react-splide/css';
+
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
@@ -2437,4 +2439,14 @@ html {
   syntax: "*";
   inherits: false;
   initial-value: 1;
+}
+/* Remove side padding WITHOUT touching the gap */
+.splide__track {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.splide {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
