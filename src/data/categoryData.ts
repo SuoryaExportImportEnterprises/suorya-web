@@ -44,7 +44,7 @@ const categoryData = {
       { name: "POMS", description: "Pom trims for creative packaging, home décor, and DIY crafts.", imageUrl: "/products/trims/poms_bright.png" },
       { name: "CORDS", description: "Versatile cords for tying, wrapping, and decorative use.", imageUrl: "/cover-images/cord cover.png" },
       { name: "RUFFLED & PLEATED", description: "Textured trims with soft ruffles and structured pleats.", imageUrl: "/products/trims/pleated&ruffled.png" },
-      { name: "FRINGES & TASSELS", description: "Decorative trims featuring layered tassels and flowing fringe movement.", imageUrl: "/products/trims/fringes&tassels.png" },
+      { name: "FRINGES & TASSELS", description: "Decorative trims featuring layered tassels and flowing fringe movement.", imageUrl: "/products/trims/fringesAndTassels.png" },
       { name: "LACES", description: "Fine lace detailing for apparel, packaging, and accessories.", imageUrl: "/products/trims/laces.png" },
     ],
   },
