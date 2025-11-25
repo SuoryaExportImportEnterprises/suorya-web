@@ -54,11 +54,18 @@ export function Navigation() {
               <NavLink
                 key={name}
                 to={path}
-                className={({ isActive }) =>
-                  `text-stone-700 hover:text-orange-600 transition-colors duration-300 pb-1 ${
-                    isActive ? "border-b-2 border-orange-600" : ""
-                  }`
-                }
+                // className={({ isActive }) =>
+                //   `text-stone-700 hover:text-orange-600 transition-colors duration-300 pb-1 ${
+                //     isActive ? "border-b-2 border-orange-600" : ""
+                //   }`
+                // }
+                className={({ isActive }) => 
+                  `pb-1 transition-colors duration-300  
+                ${isActive ? "text-orange-600 border-b-2 border-orange-600" 
+                  : "text-stone-700 hover:text-orange-600"
+                }` 
+              }
+
               >
                 {name}
               </NavLink>
@@ -67,11 +74,12 @@ export function Navigation() {
             {/* Contact Us link */}
             <NavLink
               to="/contact"
-              className={({ isActive }) =>
-                `text-orange-600 transition-colors duration-300 pb-1 border-orange-600 hover:text-orange-600 ${
-                  isActive ? "border-b-2 border-orange-600 text-orange-600" : ""
-                }`
-              }
+              className={({ isActive }) => `pb-1 transition-colors duration-300 
+              ${isActive ? "text-orange-600 border-b-2 border-orange-600" 
+                : "text-stone-700 hover:text-orange-600" 
+              }` 
+            }
+
             >
               Contact Us
             </NavLink>
@@ -132,35 +140,45 @@ export function Navigation() {
 
             {navigationItems.map(({ name, path }) => (
               <NavLink
-                key={name}
-                to={path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `block w-full text-left py-2 text-stone-700 hover:text-orange-600 ${
-                    isActive
-                      ? "text-orange-600 border-l-2 border-orange-600 pl-2"
-                      : ""
-                  }`
-                }
-              >
-                {name}
-              </NavLink>
+               key={name}
+               to={path}
+               onClick={() => setIsOpen(false)}
+               className="block py-2"
+             >
+               {({ isActive }) => (
+                 <span
+                   className={             
+                     isActive
+                       ? "text-orange-600 border-b-2 border-orange-600 inline-block"
+                       : "text-stone-700 hover:text-orange-600 inline-block"
+                   }             
+                 >
+                   {name}
+                 </span>
+               )}
+            </NavLink>
+
             ))}
 
             {/* Contact Us for Mobile */}
             <NavLink
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `block w-full text-left py-2 text-orange-600 hover:text-orange-600 ${
-                  isActive
-                    ? "text-orange-600 border-l-2 border-orange-600 pl-2"
-                    : ""
-                }`
-              }
-            >
-              Contact Us
+             to="/contact"
+             onClick={() => setIsOpen(false)}
+             className="block py-2"
+           >
+             {({ isActive }) => (
+               <span
+                 className={
+                   isActive
+                     ? "text-orange-600 border-b-2 border-orange-600 inline-block"
+                     : "text-stone-700 hover:text-orange-600 inline-block"
+                 }
+               >
+                 Contact Us
+               </span>
+             )}
             </NavLink>
+
           </div>
         </div>
       )}
