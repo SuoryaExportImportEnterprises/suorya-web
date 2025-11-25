@@ -545,6 +545,14 @@ export function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const phoneRegex = /^[0-9()\-\s]{6,20}$/;
+
+if (!phoneRegex.test(formData.phone)) {
+  toast.error("Enter a valid phone number.");
+  return;
+}
+
+
     try {
       const res = await fetch("https://fjpa3m9rh4.execute-api.ap-south-1.amazonaws.com/prod/contactFormHandler", {
         method: "POST",
@@ -724,8 +732,6 @@ export function ContactPage() {
                 type="tel"
                 id="phone"
                 required
-                // pattern="[0-9 ()\-]{6,20}"
-                pattern="^[0-9()\\-\\s]{6,20}$"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
