@@ -546,7 +546,7 @@ export function ContactPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://clfsnmd7q5.execute-api.ap-south-1.amazonaws.com/default/contactFormHandler", {
+      const res = await fetch("https://fjpa3m9rh4.execute-api.ap-south-1.amazonaws.com/prod/contactFormHandler", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -724,7 +724,8 @@ export function ContactPage() {
                 type="tel"
                 id="phone"
                 required
-                pattern="[0-9 ()-]{6,20}"
+                // pattern="[0-9 ()\-]{6,20}"
+                pattern="^[0-9()\\-\\s]{6,20}$"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
