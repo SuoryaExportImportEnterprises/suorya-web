@@ -938,9 +938,6 @@
 
 
 
-
-
-
 import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
@@ -976,7 +973,6 @@ export function PortfolioGrid() {
         </p>
       </div>
 
-      {/* Splide Slider */}
       <Splide
         options={{
           type: "loop",
@@ -984,18 +980,21 @@ export function PortfolioGrid() {
           pagination: false,
           drag: true,
 
-          // ⭐ EXACT SETTINGS YOU WANT
-          perPage: 4,     // show 4 at a time
-          perMove: 1,     // ⭐ move EXACTLY 1 on click
-          gap: "24px",    // same spacing as before
+          perPage: 4,
+          perMove: 1,
+          gap: "24px",
           padding: 0,
           trimSpace: true,
 
           autoScroll: {
-            pauseOnHover: true,   // ⭐ keep pause on hover
-            pauseOnFocus: true,
-            rewind: false,
-            speed: 1.2,           // same as original CSS scroll feel
+            pauseOnHover: true,
+            speed: 1.8,
+          },
+
+          breakpoints: {
+            1024: { perPage: 3, gap: "20px" },
+            768: { perPage: 2, gap: "16px" },
+            480: { perPage: 2, gap: "12px" },
           },
         }}
         extensions={{ AutoScroll }}
@@ -1003,25 +1002,8 @@ export function PortfolioGrid() {
       >
         {repeatedImages.map((img, i) => (
           <SplideSlide key={i}>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                borderRadius: "16px",
-                overflow: "hidden",
-                background: "#f5f5f5",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              }}
-            >
-              <img
-                src={img}
-                alt={`slide-${i}`}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
+            <div className="gallery-card">
+              <img src={img} alt={`slide-${i}`} className="gallery-img" />
             </div>
           </SplideSlide>
         ))}

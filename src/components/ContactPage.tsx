@@ -838,7 +838,7 @@ if (!phoneRegex.test(formData.phone)) {
         <h2 className="text-2xl text-stone-800 mb-6">Visit Our Showroom</h2>
         <div className="space-y-6">
           <div className="flex items-start space-x-4">
-            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5 text-orange-600" />
             </div>
             <div>
@@ -852,7 +852,7 @@ if (!phoneRegex.test(formData.phone)) {
           </div>
 
           <div className="flex items-start space-x-4">
-            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
               <Mail className="w-5 h-5 text-orange-600" />
             </div>
             <div>
@@ -873,7 +873,7 @@ if (!phoneRegex.test(formData.phone)) {
 
           {/* Address Section */}
 <div className="flex items-start space-x-4 mt-6">
-  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
     <HouseIcon className="w-5 h-5 text-orange-600" />
   </div>
   <div>
