@@ -17,15 +17,13 @@ export function GTranslateWidget() {
       native_language_names: false,
       languages: [
         "en", // English
-        "ar", // Arabic
-        "ja", // Japanese
-        "nl", // Dutch
-        "fr", // French
         "de", // German
-        "it", // Italian
-        "pt", // Portuguese
-        "ru", // Russian
         "es", // Spanish
+        "fr", // French
+        "pt", // Portuguese
+        "ja", // Japanese
+        "ru", // Russian
+        "ar", // Arabic        
       ],
       wrapper_selector: "#gtranslate_wrapper",
       switcher_horizontal_position: "left",
