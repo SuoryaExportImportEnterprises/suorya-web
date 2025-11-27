@@ -1,6 +1,6 @@
 // src/pages/HomePage.tsx
 import { SEO } from "../components/layout/SEO";
-import { Hero } from "../components/sections/Hero";
+import Hero  from "../components/sections/Hero";
 import { AboutUs } from "../components/sections/AboutUs";
 import OurEthos from "../components/sections/OurEthos";
 import { StorylineSection } from "../components/sections/StorylineSection";

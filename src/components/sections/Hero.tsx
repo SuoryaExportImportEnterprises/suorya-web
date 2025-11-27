@@ -7,7 +7,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/cover-images/ribbon-cover/stripecover.jpg"
+          src="/home/TransparentHeaderImage.png"
           alt="Luxury ribbons and crafts"
           className="w-full h-full object-cover"
         />
@@ -52,3 +52,4 @@ export function Hero() {
     </section>
   );
 }
+export default Hero;

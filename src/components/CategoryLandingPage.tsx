@@ -51,25 +51,34 @@ export function CategoryLandingPage({
     <div className="min-h-screen bg-white pt-20">
       
       {/* 🌤️ Softer overlay for elegance */}
-      <div className="relative h-[300px] md:h-[320px] w-full overflow-hidden mb-20">
+      {/* <div className="relative h-[300px] md:h-[320px] w-full overflow-hidden mb-20">
         <ImageWithFallback
           src={coverImageUrl}
           alt={categoryName}
           className="w-full h-full object-cover opacity-100"
-        />
+        /> */}
 
         {/* ✅ Light gradient overlay (not full black) */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent"></div>
 
 
         {/* Text Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white space-y-4 px-4">
             <h1 className="category-title">{categoryName}</h1>
             <p className="category-subtitle">Explore our premium collection</p>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <div className="relative h-[200px] md:h-[220px] w-full flex items-center justify-center mb-10 bg-white">
+  <div className="text-center space-y-3 px-4">
+    <h1 className="category-title">{categoryName}</h1>
+<p className="category-subtitle">Explore our premium collection</p>
+
+  </div>
+</div>
+
 
       {/* Subcategory Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">

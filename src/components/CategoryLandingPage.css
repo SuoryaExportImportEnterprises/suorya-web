@@ -1,25 +1,26 @@
 .category-title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 600;
+  font-size: 3.9rem;
+  font-weight: 400;
+  /* margin-bottom: 1rem; */
   text-transform: none;
-  color: #ffffff;
+  color: #292524;;
   letter-spacing: 0.3px;
-
+/* 
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.4),
-    0 4px 8px rgba(0, 0, 0, 0.25);
+    0 4px 8px rgba(0, 0, 0, 0.25); */
 }
 
 .category-subtitle {
   font-size: clamp(1.8rem, 1.8vw, 1.5rem);
   font-weight: 400;
   letter-spacing: 0.6px;
-  color: #f9f5f5;
-
+  color: #292524;
+/* 
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.95),
     0 3px 6px rgba(0, 0, 0, 0.3),
-    0 5px 12px rgba(0, 0, 0, 0.75);
+    0 5px 12px rgba(0, 0, 0, 0.75); */
 }
 /* 
 .category-title,
