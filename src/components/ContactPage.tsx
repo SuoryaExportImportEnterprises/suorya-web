@@ -552,9 +552,10 @@ if (!phoneRegex.test(formData.phone)) {
   return;
 }
 
+// https://8na3w31l60.execute-api.ap-south-1.amazonaws.com/contact
 
     try {
-      const res = await fetch("https://fjpa3m9rh4.execute-api.ap-south-1.amazonaws.com/prod/contactFormHandler", {
+      const res = await fetch("https://8na3w31l60.execute-api.ap-south-1.amazonaws.com/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
