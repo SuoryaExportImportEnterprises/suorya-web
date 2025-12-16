@@ -44,11 +44,20 @@ export function StorylineSection({
           </div>
 
           {/* Image */}
-          <div
+          {/* <div
             className={`relative h-[500px] rounded-2xl overflow-hidden shadow-xl order-2 lg:order-none ${
               reverse ? "lg:col-start-2" : ""
             }`}
-          >
+          > */}
+          <div
+  className={`relative 
+    h-[220px] sm:h-[300px] lg:h-[500px] 
+    rounded-2xl overflow-hidden shadow-xl 
+    order-2 lg:order-none ${
+      reverse ? "lg:col-start-2" : ""
+    }`}
+>
+
             <ImageWithFallback
               src={imageUrl}
               alt={imageAlt}
