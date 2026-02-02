@@ -946,12 +946,12 @@ import "@splidejs/react-splide/css";
 
 export function PortfolioGrid() {
   const images = [
-    "/images/gifting.jpg",
+    "/images/productNew1.jpeg",
     "/images/satin-bow-garland.JPG",
-    "/images/bouquet.jpg",
+    "/images/productNew3.jpeg",
     "/images/bow_blue.png",
     "/images/satin-bow-cover.png",
-    "/images/long_bow.JPG",
+    "/images/productNew.jpeg",
     "/images/red_bow.png",
   ];
 
